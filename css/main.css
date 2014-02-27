@@ -1,0 +1,370 @@
+
+
+	.mapTree_add16 {
+		background-image: url('../images/add16.png');
+	}
+	.mapTree_remove16 {
+		background-image: url('../images/remove16.png');
+	}
+	.mapTree_info16 {
+		background-image: url('../images/info16.png');
+	}
+	.mapControl_Problem16 {
+		background-image: url('../images/gis_icons/problem.gif');
+	}
+	.download_format_tiff{
+		background-image: url('../images/gis_icons/tiff.png');
+		background-size:16px 16px;
+	}
+	.download_format_geotiff{
+		background-image: url('../images/gis_icons/geotiff.png');
+		background-size:16px 16px;
+	}
+	.download_format_pdf{
+		background-image: url('../images/gis_icons/pdf.png');
+		background-size:16px 16px;
+	}
+	.download_format_svg{
+		background-image: url('../images/gis_icons/svg.png');
+		background-size:16px 16px;
+	}
+	.download_format_kml{
+		background-image: url('../images/gis_icons/kml.png');
+		background-size:16px 16px;
+	}
+	.download_format_kmz{
+		background-image: url('../images/gis_icons/kmz.png');
+		background-size:16px 16px;
+	}
+	.login16 {
+		background-image: url('images/login16.png');
+	}
+	.search16 {
+		background-image: url('../images/search16.png');
+	}
+	.refresh16 {
+		background-image: url('../images/gis_icons/refresh.png');
+	}
+	.logout16 {
+		background-image: url('images/logout16.png');
+	}
+	.zoomtoextent16{
+		background-image: url('images/zoomtoextent16.png');
+	}
+	.measure_distance16{
+		background-image: url('images/measure_distance16.png');
+	}
+	.measure_area16{
+		background-image: url('images/measure_area16.png');
+	}
+	.measure_clear{
+		background-image: url('images/measureClear16.png');
+	}
+	.save16{
+		background-image: url('images/save16.png');
+	}
+	.clear16{
+		background-image: url('../images/clear16.png');
+	}
+	.getmap{
+		background-image: url('images/getmap.png');
+	}
+	.opengeo{
+		background-image: url('images/opengeo.png');
+	}
+	.mapTree_icon16{
+		background-image: url('../images/mapTree_icon16.png');
+	}
+	.print{
+		background-image: url('../images/gis_icons/print.png');
+		background-size:16px 16px;
+	}
+	.choice_icon16{
+		background-image: url('../images/choice_icon16.png');
+	}
+	
+	.info_search_div{
+		font-family:Tahoma;
+		font-size:10;
+		color:#006EA5;
+	}
+	.bottomAlign
+	{
+		vertical-align:bottom;
+	}
+	
+	.blank16{
+		background-image: url('../images/gis_icons/blank.png');
+	}
+	.controls_map_zoombyarea{
+		background-image: url('../images/gis_icons/area_zoom.png');
+	}
+	.controls_map_zoomtomapextent{
+		background-image: url('../images/gis_icons/map_extend.png');
+	}
+	.controls_map_zoomprevious{
+		background-image: url('../images/gis_icons/zoom_previous.png');
+	}
+	
+	.controls_map_measuredistance{
+		background-image: url('../images/gis_icons/distance_meas.png');
+	}
+	.controls_map_measurearea{
+		background-image: url('../images/gis_icons/area_meas.png');
+	}
+	.controls_map_measureclear{
+		background-image: url('../images/gis_icons/measureClear16.png');
+	}
+	.controls_map_getlayerinfo{
+		background-image: url('../images/gis_icons/indentify_info.png');
+	}
+	.controls_map_getpointcoordinates{
+		background-image: url('../images/gis_icons/get_PointCoordinates.png');
+	}
+	.controls_map_convertcoordinates{
+		background-image: url('../images/gis_icons/convert_Coordinates.png');
+	}
+	.controls_map_pan{
+		background-image: url('../images/gis_icons/mapPan.png');
+	}
+	.controls_map_print{
+		background-image: url('../images/gis_icons/print.png');
+		background-size:16px 16px;
+	}
+	.controls_map_refresh {
+		background-image: url('../images/gis_icons/refresh.png');
+	}
+	.controls_map_selectbyrec{
+		background-image: url('../images/gis_icons/selectbyrec.png');
+	}
+	.controls_map_selected{
+		background-image: url('../images/gis_icons/selected.gif');
+	}
+	.wms_info_table
+	{
+		font-family:Tahoma;
+		font-size:10px;
+	}
+	.base_layers
+	{
+		background-image: url('../images/earth.png');
+	}
+	.layer_zoomtoextent{
+		background-image: url('../images/gis_icons/map_extend.png');
+	}
+	
+	.english{
+		background-image: url('../images/english.png');
+	}
+	.greek{
+		background-image: url('../images/greek.png');
+	}
+	.italian{
+		background-image: url('../images/italian.png');
+	}
+	.search{
+		background-image: url('../images/gis_icons/search.png');
+		background-size:16px 16px;
+	}
+	.search_save{
+		background-image: url('../images/gis_icons/save1.png');
+		background-size:16px 16px;
+	}
+	.search_quickinfo{
+		background-image: url('../images/gis_icons/table.png');
+		background-size:16px 16px;
+	}
+	.search_edit{
+		background-image: url('../images/gis_icons/edit.png');
+		background-size:16px 16px;
+	}
+	/*********************************************************************************/
+	/************************** NAVIGATION CONTROLS STYLES ***************************/
+	/*********************************************************************************/
+	div#ol_custom_navigation{
+		width:120px;
+		height:120px;
+		position:absolute;
+		background-repeat:no-repeat;
+		z-index:1000000;
+		margin:10px;
+	}
+	div#ol_custom_navigation_max{
+		width:79px;
+		height:41px;
+		background-image:url('../images/control/max.png');
+		position:relative;
+		top:20px;
+		right:-21;
+	}
+	div#ol_custom_navigation_extent{
+		width:52px;
+		height:51px;
+		background-image:url('../images/control/extent.png');
+		position:absolute;
+		right:33px;
+		top:35px;
+	}
+	div#ol_custom_navigation_min{
+		width:79px;
+		height:41px;
+		background-image:url('../images/control/min.png');
+		position:relative;
+		bottom:-20px;
+		right:-21;
+	}
+	/*********************************************************************************/
+	/************************** EDIT STYLES ******************************************/
+	/*********************************************************************************/
+	.draw_polygon{
+		background-image: url('../images/gis_icons/polygon-create.png');
+		background-size:16px 16px;
+	}
+	.edit_draw{
+		background-image: url('../images/gis_icons/edit.png');
+		background-size:16px 16px;
+	}
+	.edit_pin{
+		background-image: url('../images/gis_icons/pin.png');
+		background-size:16px 16px;
+	}
+	.edit_split{
+		background-image: url('../images/gis_icons/split.png');
+		background-size:16px 16px;
+	}
+	.edit_copy{
+		background-image: url('../images/gis_icons/edit-copy.png');
+		background-size:16px 16px;
+	}
+	.draw_point{
+		background-image: url('../images/gis_icons/point-create.png');
+		background-size:16px 16px;
+	}
+	.delete_draw{
+		background-image: url('../images/gis_icons/element-delete.png');
+		background-size:16px 16px;
+	}	
+	.draw_line{
+	
+		background-image: url('../images/gis_icons/line-create.png');
+		background-size:16px 16px;
+	}
+	.edit_command_btn_enter{
+	
+		background-image: url('../images/enter.png');
+		background-size:30px 30px;
+	}
+	.select_feature{
+		background-image: url('../images/gis_icons/select.png');
+		background-size:16px 16px;
+	}
+	.save_feature{
+		background-image: url('../images/gis_icons/save1.png');
+		background-size:16px 16px;
+	}
+	.edit_cancel{
+		background-image: url('../images/gis_icons/cancel.png');
+		background-size:16px 16px;
+	}
+	.undo_draw{
+		background-image: url('../images/gis_icons/undo.png');
+		background-size:16px 16px;
+	}
+	.redo_draw{
+		background-image: url('../images/gis_icons/redo.png');
+		background-size:16px 16px;
+	}
+	.move_feature{
+		background-image: url('../images/gis_icons/element-move.png');
+		background-size:16px 16px;
+	}
+	.hide_feature{
+		background-image: url('../images/gis_icons/hide.png');
+		background-size:16px 16px;
+	}
+	.show_feature{
+		background-image: url('../images/gis_icons/show.png');
+		background-size:16px 16px;
+	}
+	/*********************************************************************************/
+	/************************** SEARCH STYLES ****************************************/
+	/*********************************************************************************/
+	.search_polygon{
+		background-image: url('../images/gis_icons/polygon-create.png');
+		background-size:16px 16px;
+		
+	}
+	.search_buffer{
+		background-image: url('../images/gis_icons/point-create.png');
+		background-size:16px 16px;
+	}
+	.search_line{
+		background-image: url('../images/gis_icons/vector-create.png');
+		background-size:16px 16px;
+	}
+	.search_bbox{
+		background-image: url('../images/gis_icons/layer-create.png');
+		background-size:16px 16px;
+	}
+	.search_clear{
+		background-image: url('../images/gis_icons/clear.png');
+		background-size:16px 16px;
+	}
+	.search_export_list_to_csv{
+		background-image: url('../images/gis_icons/csv.png');
+		background-size:16px 16px;
+	}
+	.search_show_result_list{
+		background-image: url('../images/gis_icons/list.gif');
+		background-size:16px 16px;
+	}
+	/*********************************************************************************/
+	/****************************** GE STYLES ****************************************/
+	/*********************************************************************************/
+	.ge_control_icon{
+		background-image: url('../images/gis_icons/ge.png');
+		background-size:16px 16px;
+	}
+	.ge_control_openlayers_icon{
+		background-image: url('../images/gis_icons/openLayers.png');
+		background-size:16px 16px;
+	}
+	.ge_control_settings_icon{
+		background-image: url('../images/gis_icons/ge_settings.png');
+		background-size:16px 16px;
+	}
+	/*********************************************************************************/
+	/****************************** AddToBasket **************************************/
+	/*********************************************************************************/
+	.addToSelected_Add{
+		background-image: url('../images/gis_icons/addToSelected.png');
+		background-size:16px 16px;
+	}
+	.addToSelected_Remove{
+		background-image: url('../images/gis_icons/removeFromSelected.png');
+		background-size:16px 16px;
+	}
+
+	.addToSelected_Grid_Show {
+		background-image: url('../images/gis_icons/table.png');
+		background-size:16px 16px;
+	}
+	/*********************************************************************************/
+	/****************************** Authentication ***********************************/
+	/*********************************************************************************/
+	.authenicate_Lock{
+		background-image: url('../images/gis_icons/authenticate.png');
+	
+	}
+	.authenticate_Cancel{
+		background-image: url('../images/gis_icons/cancel.png');
+	}
+	/*********************************************************************************/
+	/****************************** Thematic Layer ***********************************/
+	/*********************************************************************************/
+	.edit_thematic_layer{
+		background-image: url('../images/gis_icons/map-edit.png');
+		background-size:16px 16px;
+	}
+	
+	

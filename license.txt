@@ -1,0 +1,59 @@
+GET SDI Portal v.3.0 (R) from Geospatial Enabling Technologies Ltd. (C) is an open source
+
+Platform that acts as a client for spatial data infrastructure (SDI) services.
+
+
+
+At its core,  the GET SDI Portal v.3.0 (R) is based on open source components OpenLayers,
+
+ExtJS, GeoExt and Proj4js that provide a platform for sophisticated web
+
+Browser spatial visualization and analysis. It is installed and configured on a Web
+
+Application Server so multiple users can access the site via Web browsers. It is used to
+
+find, view, and query geospatial data published with standard SDI Web services and
+
+integrate multiple sources into a single map view that can be easily navigated
+
+
+
+GET SDI Portal v.3.0 (R) optimizes the client browsing experience when connecting to open
+
+standards-based services
+
+
+
+Copyright (C) 2014  Geospatial Enabling Technologies Ltd. url: http:www.getmap.gr, e-mail: contact@getmap.gr
+
+Authors: S. Kamilieris / T. Vakkas / A. Mitrou
+Core Developer: Simos Kamilieris
+
+
+This file is part of GET SDI Portal v.3.0 (R) from Geospatial Enabling Technologies Ltd (C).
+
+
+
+GET SDI Portal v.3.0 (R) from Geospatial Enabling Technologies Ltd (C) is free software:
+
+you can redistribute it and/or modify
+
+it under the terms of the GNU General Public License as published by
+
+the Free Software Foundation, version 3 of the License.
+
+
+
+This program is distributed in the hope that it will be useful,
+
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+GNU General Public License for more details.
+
+
+
+You should have received a copy of the GNU General Public License version 3
+
+along with this program.  If not, see http:www.gnu.org/licenses/gpl-3.0.html.
