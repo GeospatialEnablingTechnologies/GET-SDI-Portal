@@ -14,10 +14,7 @@ map_metadata_controlsTTbar=[
 		toggleGroup:toggleGroupMap_Metadata,
 		toggleHandler:function(btn,pressed)
 		{
-			if(typeof map_metadata_Zoom_ByArea_var!=="undefined")
-			{
-				map_metadata_Zoom_ByArea_var.deactivate();
-			}
+			
 		}
 	},
 	{	
