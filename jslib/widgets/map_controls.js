@@ -367,7 +367,14 @@ map_controlsTTbar=[
 										
 								markers.addMarker(new OpenLayers.Marker(lonLat,icon));
 
-								map.setCenter(lonLat, 10);
+								var zoomlevel=map.getZoom();
+								
+								if (zoomlevel<18)
+								{
+									zoomlevel=18;
+								}
+								
+								map.setCenter(lonLat, zoomlevel);
 								
 							}
 						}]
