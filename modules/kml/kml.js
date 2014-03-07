@@ -315,6 +315,8 @@ var kml_form=new Ext.Panel({
 							copy.set("bbox","");
 
 							copy.set("layers_crs","EPSG:4326");
+							
+							copy.set("native_srs","EPSG:4326");
 
 							copy.set("layers_basename",record.get("kml_Path"));
 
