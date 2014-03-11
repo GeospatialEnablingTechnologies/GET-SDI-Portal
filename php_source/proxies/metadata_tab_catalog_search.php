@@ -210,7 +210,7 @@ class cswSearch
 	
 		$dom_xml_NextRecord=$dom_xml_search_results->getAttribute("nextRecord");
 		
-		if ($dom_xml_NextRecord==0)
+		if (($dom_xml_NextRecord==0) || ($dom_xml_NextRecord>$dom_xml_RecordsMatched))
 		{
 			if(count($this->_sendServers)>($this->_currentServerCount+1))
 			{
