@@ -217,11 +217,11 @@ class searchArea
 					
 					$cql=str_replace(" ","+",$cql);
 					
-					$url=$getServiceURLSection.$separator."version=1.1.0&service=WFS&request=GetFeature&typename=".$layer."&CQL_FILTER=".urlencode($cql);
+					$url=$getServiceURLSection.$separator."version=1.0.0&service=WFS&request=GetFeature&typename=".$layer."&CQL_FILTER=".urlencode($cql);
 					
 					$xml=file_get_contents_safe($url);
-					
-					$resultArr=$this->createRecords($xml,$layer,$getServiceURLSectionRaw,$getServiceAuthentication);
+					//print_r($xml);
+					$resultArr=$this->createRecords($xml,$layer,$getServiceURLSectionRaw,$getServiceAuthentication,$layer_GEOM_FIELD);
 					
 					if(!empty($resultArr))
 					{
@@ -250,27 +250,23 @@ class searchArea
 		return $service_members;
 	}
 
-	function createRecords($xml,$layer,$service,$authentication)
+	function createRecords($xml,$layer,$service,$authentication,$geom_field)
 	{
 		$dom_xml=new DOMDocument();
 		
 		$dom_xml->loadXML($xml);
 	
-		
-		$countFeatureMember=$dom_xml->getElementsByTagName("featureMembers")->length;
+		$countFeatureMember=$dom_xml->getElementsByTagName("featureMember")->length;
 		
 		if ($countFeatureMember>0)
 		{
 		
-			$childs=$dom_xml->getElementsByTagName("featureMembers")->item(0)->childNodes;
+			$childs=$dom_xml->getElementsByTagName("featureMember");
 			
 			$i=0;
 			
 			foreach($childs as $key=>$value)
 			{
-				$featureId=(string)$value->getAttributeNS("http://www.opengis.net/gml","id");
-				
-				$output[$i]["featureid"]=$featureId;
 				
 				$output[$i]["layer"]=$layer;
 				
@@ -284,41 +280,37 @@ class searchArea
 				
 				foreach($childNodes as $k_child=>$v_child)
 				{
-					$tag=(string)$v_child->tagName;
-					
-					$tagArr=explode(":",$tag);
 				
-					if (count($tagArr)>1)
-					$tagTitle=$tagArr[1];
-					else
-					$tagTitle=$tag;
-
-					$svalue=str_replace("&","&amp;",(string)$v_child->nodeValue);
+					$v_childnodes=$v_child->childNodes;
 					
-					if (empty($this->csvService))
+					$featureId=(string)$v_child->getAttribute("fid");
+				
+					$output[$i]["featureid"]=$featureId;
+					
+					foreach($v_childnodes as $att_k_child=>$att_v_child)
 					{
-						if ((strtoupper($tagTitle)!="GEOMETRY") && (strtoupper($tagTitle)!="THE_GEOM") && (strtoupper($tagTitle)!="GEOM"))
+						if ((string)$att_v_child->localName!=$geom_field)
 						{
-							if ($m<=4)
+							if (empty($this->csvService))
 							{
-								$output[$i]["ATT_".$m]=$svalue;
-							
-								$m++;
+								if ($m<=4)
+								{
+									$output[$i]["ATT_".$m]=(string)$att_v_child->nodeValue;
+								
+									$m++;
+								}
+							}
+							else
+							{
+								if($service==$this->csvService)
+								{
+									$output[$i][(string)$att_v_child->localName]=(string)$att_v_child->nodeValue;
+								}
 							}
 						}
-					}
-					else
-					{
-						if($service==$this->csvService)
-						{
-							if ((strtoupper($tagTitle)!="GEOMETRY") && (strtoupper($tagTitle)!="THE_GEOM") && (strtoupper($tagTitle)!="GEOM"))
-							{
-								$output[$i][$tagTitle]=(string)$v_child->nodeValue;
-							}
-						}
+					
 					}
 				}
-				
 				if (empty($this->csvService))
 				{
 					if ($m<=4)
@@ -335,7 +327,6 @@ class searchArea
 			}
 
 		}
-		
 		
 		return $output;
 	

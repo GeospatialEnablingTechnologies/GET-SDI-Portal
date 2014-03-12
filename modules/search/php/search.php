@@ -22,7 +22,7 @@ class xmlgetfeature
 		
 		//$cql=str_replace("%","%25",$cql);
 		
-		$url=$data['url'].$separator."version=1.1.0&service=WFS&request=GetFeature&typename=".$data['layer_basename']."&CQL_FILTER=".urlencode($cql);
+		$url=$data['url'].$separator."version=1.0.0&service=WFS&request=GetFeature&typename=".$data['layer_basename']."&CQL_FILTER=".urlencode($cql);
 		
 		$this->service_authentication=$_REQUEST["service_authenication"];
 		
@@ -46,7 +46,7 @@ class xmlgetfeature
 		
 		$dom_xml->loadXML($gml);
 			
-		$countFeatureMember=$dom_xml->getElementsByTagName("featureMembers")->length;
+		$countFeatureMember=$dom_xml->getElementsByTagName("featureMember")->length;
 		
 		if ($countFeatureMember>0)
 		{
@@ -60,12 +60,12 @@ class xmlgetfeature
 	
 	function fetchAttributes($dom_xml,$data)
 	{
-		$countFeatureMember=$dom_xml->getElementsByTagName("featureMembers")->length;
+		$countFeatureMember=$dom_xml->getElementsByTagName("featureMember")->length;
 		
 		if ($countFeatureMember>0)
 		{
 			
-			$childs=$dom_xml->getElementsByTagName("featureMembers")->item(0)->childNodes;
+			$childs=$dom_xml->getElementsByTagName("featureMember");
 			
 			$totalRecords=$childs->length;
 			
@@ -75,11 +75,8 @@ class xmlgetfeature
 			
 			foreach($childs as $key=>$value)
 			{
-				$featureId=(string)$value->getAttributeNS("http://www.opengis.net/gml","id");
 			
 				$output.="<RECORD>";
-				
-				$output.="<featureid>".$featureId."</featureid>";
 				
 				$authentication=str_replace("&","&amp;",$this->service_authentication);
 				
@@ -93,20 +90,20 @@ class xmlgetfeature
 
 				foreach($childNodes as $k_child=>$v_child)
 				{
-					$tag=(string)$v_child->tagName;
+					$v_childnodes=$v_child->childNodes;
 					
-					$tagArr=explode(":",$tag);
-				
-					if (count($tagArr)>1)
-					$tagTitle=$tagArr[1];
-					else
-					$tagTitle=$tag;
-
-					$svalue=(string)$v_child->nodeValue;
+					$featureId=(string)$v_child->getAttribute("fid");				
 					
-					if ((strtoupper($tagTitle)!="GEOMETRY") && (strtoupper($tagTitle)!="THE_GEOM") && (strtoupper($tagTitle)!="GEOM"))
+					$output.="<featureid>".$featureId."</featureid>";
+					
+					foreach($v_childnodes as $att_k_child=>$att_v_child)
 					{
-						$output.="<".$tagTitle.">".htmlspecialchars($svalue)."</".$tagTitle.">";
+						
+						if ((string)$att_v_child->localName!=$data['geom_field'])
+						{
+							$output.="<".(string)$att_v_child->localName.">".htmlspecialchars((string)$att_v_child->nodeValue)."</".(string)$att_v_child->localName.">";
+						}
+					
 					}
 					
 				}

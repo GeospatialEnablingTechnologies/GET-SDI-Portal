@@ -1569,6 +1569,7 @@ function map_search_show_grid_results()
 		listeners: {
 			beforeload: function(){
 					this.baseParams.url = map_search_service_url;
+					this.baseParams.geom_field = map_search_layer_geometry_field;
 					this.baseParams.layer_basename = map_search_layer_basename;
 					this.baseParams.service_authenication=map_search_service_authentication;
 					this.baseParams.cql = Ext.getCmp('map_search_sql_textarea').getValue();
