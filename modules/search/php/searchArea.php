@@ -199,8 +199,8 @@ class searchArea
 				
 				$layersArr=explode(",",$layers);
 				
-				$separator = (parse_url($getServiceURLSection, PHP_URL_QUERY) == NULL) ? '?' : '&';
-
+				$separator = (parse_url($getServiceURLSectionRaw, PHP_URL_QUERY) == NULL) ? '?' : '&';
+		
 				foreach($layersArr as $k=>$v)
 				{
 					$layerArr=explode("::",$v);
@@ -220,7 +220,7 @@ class searchArea
 					$url=$getServiceURLSection.$separator."version=1.0.0&service=WFS&request=GetFeature&typename=".$layer."&CQL_FILTER=".urlencode($cql);
 					
 					$xml=file_get_contents_safe($url);
-					//print_r($xml);
+					
 					$resultArr=$this->createRecords($xml,$layer,$getServiceURLSectionRaw,$getServiceAuthentication,$layer_GEOM_FIELD);
 					
 					if(!empty($resultArr))
