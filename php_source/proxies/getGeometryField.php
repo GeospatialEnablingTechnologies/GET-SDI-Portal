@@ -19,6 +19,10 @@ class getGeometryField
 		
 		$this->layerBaseName=$_REQUEST["layer"];
 		
+		$this->serviceURL=strtolower($this->serviceURL);
+			
+		$this->serviceURL=str_replace("service=wms","",$this->serviceURL);
+		
 		$url=$this->serviceURL."?SERVICE=WFS&VERSION=1.1.1&REQUEST=DescribeFeatureType&typename=".$this->layerBaseName;
 		
 		$url=create_authentication_url($url,$_REQUEST['serviceUsername'],$_REQUEST['servicePassword']);
