@@ -75,6 +75,10 @@ class getAttributes
 		
 			if (strpos($url,"?")==""){$seperator = "?";}else{$seperator = "&";}
 		
+			$url=strtolower($url);
+			
+			$url=str_replace("service=wms","",$url);
+		
 			$this->fetchUrl=$url.$seperator."SERVICE=WFS&VERSION=1.1.0&REQUEST=DescribeFeatureType&typename=".$this->layerBaseName;
 		
 			$this->output=$this->fetchEmptyAttributes();
@@ -85,6 +89,10 @@ class getAttributes
 			
 			if (strpos($url,"?")==""){$seperator = "?";}else{$seperator = "&";}
 			
+			$url=strtolower($url);
+			
+			$url=str_replace("service=wms","",$url);
+			
 			$this->fetchUrl=$url.$seperator."service=WFS&request=GetFeature&featureid=".$this->featureId."&outputFormat=GML2&srsName=EPSG:4326&typeName=".$this->layerBaseName;
 			
 			$this->fetchTypeUrl=$url.$seperator."SERVICE=WFS&VERSION=1.1.0&REQUEST=DescribeFeatureType&typename=".$this->layerBaseName;
@@ -93,7 +101,7 @@ class getAttributes
 		}
 	
 	
-	
+	echo $this->url;
 		
 	}
 	
