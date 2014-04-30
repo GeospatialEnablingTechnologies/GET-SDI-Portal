@@ -6,7 +6,9 @@ $path = isset($_REQUEST['path'])&&$_REQUEST['path'] == 'files' ? '/files' : '';
 
 $node = isset($_REQUEST['node']) ? $_REQUEST['node'] : '';
 
-$directory = $path.urldecode($node);
+$directory = $path.urldecode(iconv("UTF-8","ISO-8859-7",$node));
+
+$directory=str_replace("..","",$directory);
 
 if (is_dir($directory)){
 
@@ -16,6 +18,7 @@ if (is_dir($directory)){
 		$folder=$f;
 		if (($folder!="..") && ($folder!="."))
 		{
+			$f=iconv("ISO-8859-7","UTF-8",$f);
 			if(is_dir($directory.'/'.$folder)){
 				$nodes[] = array(
 					'text' => $f,
