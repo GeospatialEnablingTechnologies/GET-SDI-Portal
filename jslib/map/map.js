@@ -60,50 +60,7 @@ var custom_wmts_bbox="";
 	if (googleEnabled==true)
 	{
 		
-		mapLayers.push(new OpenLayers.Layer.Google(
-			"Google Satellite",
-			{
-				type: google.maps.MapTypeId.SATELLITE, 
-				numZoomLevels: 20,
-				'sphericalMercator': true,
-				fractionalZoom:false,
-				maxExtent:new OpenLayers.Bounds.fromString(epsgExtents["EPSG:900913"])
-			}
-		));
 		
-		mapLayers.push(new OpenLayers.Layer.Google(
-			"Google Streets",
-			{
-				type: google.maps.MapTypeId.ROADMAP,
-				numZoomLevels: 20,
-				'sphericalMercator': true,
-				fractionalZoom:false,
-				maxExtent:new OpenLayers.Bounds.fromString(epsgExtents["EPSG:900913"])
-			}
-		));
-		
-		mapLayers.push(new OpenLayers.Layer.Google(
-			"Google Hybrid",
-			{
-				type: google.maps.MapTypeId.HYBRID, 
-				numZoomLevels: 20,
-				'sphericalMercator': true,
-				fractionalZoom:false,
-				maxExtent:new OpenLayers.Bounds.fromString(epsgExtents["EPSG:900913"])
-			}
-		));
-		
-		
-		mapLayers.push(new OpenLayers.Layer.Google(
-			"Google Physical",
-			{
-				type: google.maps.MapTypeId.TERRAIN,
-				numZoomLevels: 20,
-				'sphericalMercator': true,
-				fractionalZoom:false,
-				maxExtent:new OpenLayers.Bounds.fromString(epsgExtents["EPSG:900913"])
-			}
-		));
 	}
 	
 	

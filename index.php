@@ -275,14 +275,7 @@ along with this program.  If not, see http://www.gnu.org/licenses/gpl-3.0.html.*
 	<?php
 		echo _init_load_Proj4JSScripts();
 	?>
-	<?php 
 	
-		if ($GLOBALS["_googleMaps_Enable"]==true)
-		{
-			echo "\t<script src='http://maps.google.com/maps/api/js?v=3&amp;sensor=false&language=el'></script>\r\n";
-		}
-	?>
-	<script src='http://www.google.com/jsapi?key=myGoogleEarthDomainKey'></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo $GLOBALS["_default_portal_url"];?>css/main.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo $GLOBALS["_default_portal_url"];?>css/scalebar-thin.css"/>
 	
@@ -330,11 +323,11 @@ along with this program.  If not, see http://www.gnu.org/licenses/gpl-3.0.html.*
 	</script>
 	
 	<script type="text/javascript" src="<?php echo $GLOBALS["_default_portal_url"];?>jslib/tabs.js<?php echo "?".$version;?>"></script>
-	<script type="text/javascript" src="<?php echo $GLOBALS["_default_portal_url"];?>modules/googleEarth/googleEarth.js<?php echo "?".$version;?>"></script>
+	
 	<script type="text/javascript" src="<?php echo $GLOBALS["_default_portal_url"];?>jslib/widgets/functions.js<?php echo "?".$version;?>"></script>
 
 	<script type="text/javascript" src="<?php echo $GLOBALS["_default_portal_url"];?>modules/quickSearch/quicksearch.js<?php echo "?".$version;?>"></script>
-	<script type="text/javascript" src="<?php echo $GLOBALS["_default_portal_url"];?>modules/google/geo_google.js<?php echo "?".$version;?>"></script>
+	
 	<script type="text/javascript" src="<?php echo $GLOBALS["_default_portal_url"];?>modules/search/search.js<?php echo "?".$version;?>"></script>
 	<script type="text/javascript" src="<?php echo $GLOBALS["_default_portal_url"];?>modules/search/area_search.js<?php echo "?".$version;?>"></script>
 	<script type="text/javascript" src="<?php echo $GLOBALS["_default_portal_url"];?>modules/addToSelected/addToSelected.js<?php echo "?".$version;?>"></script>
