@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+		<link rel="stylesheet" type="text/css" href="css/colorpicker.css"/>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/colorpicker.js"></script>
+	</head>
+	<body style="margin:0px;">
+		<p id="colorpickerHolder"></p>
+		<script>
+		
+			function getParameterByName(name) {
+				name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+				var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+				return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+			
+			$('#colorpickerHolder').ColorPicker({
+				flat: true,
+				onSubmit: function(hsb, hex, rgb, el) {
+					
+					var _elId=getParameterByName("id");
+					
+					window.parent.Ext.getCmp(_elId).setValue(hex);
+					
+					window.parent.Ext.getCmp(_elId).setFieldStyle("background-color: #"+hex+"; background-image: none;");
+					
+					window.parent.closeColorPickerWindow();
+				}
+			});
+			
+			var _color=getParameterByName("color");
+			
+			if (_color=="")
+			{
+				_color="#ff0000";
+			}
+			
+			$('#colorpickerHolder').ColorPickerSetColor(_color);
+		
+		</script>
+	</body>
+</html>

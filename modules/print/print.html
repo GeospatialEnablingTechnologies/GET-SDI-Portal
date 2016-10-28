@@ -1,0 +1,329 @@
+<html>
+	<head>
+
+		<script src="../../tools/jquery/js/jquery-1.9.1.js"></script>
+		<script src="../../tools/jquery/js/jquery-ui.js"></script>
+		<script src="../../tools/OpenLayers/OpenLayers.js"></script>
+		<script src="../../tools/OpenLayers/lib/OpenLayers/Control/ScaleBar.js"></script>
+		<style>
+			html, body{
+				height:100%;
+				margin:0px;
+				padding:0px;
+			}
+			.olImageLoadError{display: none !important;}
+
+			.column_grid_images{cursor:pointer;}
+
+			.olControlScaleBar {
+				bottom: 30px;
+				left: 10px;
+				font-family: sans-serif;
+				color: #000;
+			}
+
+			.olControlScaleBarBar {
+				height: 1px;
+				top: 14px;
+				background: #333;
+			}
+
+			.olControlScaleBarBarAlt {
+				height: 1px;
+				top: 14px;
+				background: #333;
+			}
+
+			.olControlScaleBarMarkerMajor {
+				height: 7px;
+				width: 1px;
+				top: 11px;
+				background: #333;
+			}
+
+			.olControlScaleBarMarkerMinor {
+				height: 5px;
+				width: 1px;
+				top: 12px;
+				background: #333;
+			}
+
+			.olControlScaleBarNumbersBox {
+				width: 40px;
+				height: 13px;
+				top: 21px;
+				font-size: 0.7em;
+			}
+
+			.olControlScaleBarLabelBox {
+				top: -2px;
+				height: 15px;
+				font-weight: bold;
+				letter-spacing: 0.1em;
+				font-size: 0.7em;
+				font-variant: small-caps;
+			}
+
+			.olControlScaleBarLabelBoxSingleLine {
+				height: 15px;
+				width: 35px;
+				top: 5px;
+				left: 10px;
+				font-size: 0.7em;
+				font-variant: small-caps;
+			}
+		</style>
+		<script>
+			try{			
+				p=null;
+			}catch(err){}
+			try{
+				map=null;
+			}catch(err){}
+
+			var p=parent;
+			var map;
+			
+			function createMap()
+			{
+				OpenLayers.IMAGE_RELOAD_ATTEMPTS = 5;
+				OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
+				OpenLayers.Util.onImageLoadErrorColor = 'transparent';
+				
+				map = new OpenLayers.Map("map", {controls: []});
+				
+				map.addControl(new OpenLayers.Control.Navigation());
+	
+				var _map_config_object=new p._config_init_map();
+				
+				var overlayers=p.map.getLayersBy("isBaseLayer",true);
+				
+				for(var i=(overlayers.length-1);i>=0;i--)
+				{
+					if(overlayers[i].getVisibility())
+					{
+						var bsm = overlayers[i].clone();
+
+						map.addLayer(bsm);
+					}
+				}
+				
+				addLayers("");
+				
+				for(var key in _map_config_object._mapControls)
+				{
+					try
+					{
+						map.addControl(_map_config_object._mapControls[key]);
+					}catch(err){}
+				}
+				
+				map.setCenter(new OpenLayers.LonLat(Number(p.map.getCenter().lon),Number(p.map.getCenter().lat)),p.map.getZoom());
+
+				var measurearea_layer=new OpenLayers.Layer.Vector("measurearea_layer_print",{
+					styleMap: new OpenLayers.StyleMap({
+					'default':{
+							fontColor: '${fontColor}',
+							fontSize: "${fontSize}",
+							strokeColor:"#FF7700",
+							fillColor: "#FF9900",
+							fontFamily: "Tahoma",
+							fillOpacity: 0,
+							pointRadius: 1,
+							pointerEvents: "visiblePainted",
+							labelOutlineColor:"#FFFFFF",
+							labelOutlineWidth:2,
+							strokeColor:"#FF7700",
+							strokeWidth:2,
+							strokeDashstyle:"dashdot",
+							labelOutlineColor:"#FFFFFF",
+							labelOutlineWidth:5,
+							label : "${distance}" + "${units}"
+						}
+					})
+				});	
+
+
+				map.addLayer(measurearea_layer);
+
+                                var area_layer = p.measurearea_layer.clone();
+
+
+				for(var b=0;b<area_layer.features.length;b++)
+				{
+
+					var fclone = area_layer.features[b].clone();
+
+					measurearea_layer.addFeatures([fclone]);
+				}
+
+
+
+
+
+				var measuredistance_layer=new OpenLayers.Layer.Vector("measuredistance_layer",{
+					styleMap: new OpenLayers.StyleMap({
+						'default':{
+							fontColor: '${fontColor}',
+							fontSize: "${fontSize}",
+							strokeColor:"#FF7700",
+							fillColor: "#FF9900",
+							fontFamily: "Tahoma",
+							fillOpacity: 0,
+							pointRadius: 1,
+							pointerEvents: "visiblePainted",
+							labelOutlineColor:"#FFFFFF",
+							labelOutlineWidth:2,
+							strokeColor:"#FF7700",
+							strokeWidth:2,
+							strokeDashstyle:"dashdot",
+							labelOutlineColor:"#FFFFFF",
+							labelOutlineWidth:5,
+							label : "${distance}" + "${units}"
+							}
+						})
+				});
+
+				map.addLayer(measuredistance_layer);
+
+                                var distance_layer = p.measuredistance_layer.clone();
+
+
+                                for(var c=0;c<distance_layer.features.length;c++)
+                                {
+
+                                        var fclone = distance_layer.features[c].clone();
+
+                                        measuredistance_layer.addFeatures([fclone]);
+                                }
+
+
+
+                                try{
+                                        var distance_layer = p.measuredistance_layer.clone();
+
+                                       //map.addLayer(distance_layer);
+                                }catch(err){}
+
+				
+				populateInputs();
+			}
+			
+			function addLayers(featureid)
+			{
+				var overlayers=p.mapGetlayersBy("isBaseLayer",false);
+
+				for(var i=0;i<overlayers.length;i++)
+				{
+					if (typeof overlayers[i]._layerObject!=="undefined")
+					{
+						if (overlayers[i]._layerObject._isPrintable)
+						{
+							var _layer=overlayers[i].clone();
+							
+							map.addLayer(_layer);
+						}
+					}
+
+				}
+					
+			}
+			
+			function populateInputs()
+			{
+				
+				if(p.print_template._print_logo){$("#logo").html(p.print_template._print_logo)};
+				
+				if(p.print_template._print_title){$("#title").html(p.print_template._print_title)};
+				
+				if(p.print_template._print_abstract){$("#abstract").html(p.print_template._print_abstract)};
+		
+			
+			}
+			
+			function createCode()
+			{
+				return $("#container").html();
+			}
+		
+		</script>
+	</head>
+	<body onload="createMap();">
+		<div id="container">
+			<style>
+			html, body{
+				height:100%;
+				margin:0px;
+				padding:0px;
+			}
+			.olImageLoadError{display: none !important;}
+
+			.column_grid_images{cursor:pointer;}
+
+			.olControlScaleBar {
+				bottom: 30px;
+				left: 10px;
+				font-family: sans-serif;
+				color: #000;
+			}
+
+			.olControlScaleBarBar {
+				height: 1px;
+				top: 14px;
+				background: #333;
+			}
+
+			.olControlScaleBarBarAlt {
+				height: 1px;
+				top: 14px;
+				background: #333;
+			}
+
+			.olControlScaleBarMarkerMajor {
+				height: 7px;
+				width: 1px;
+				top: 11px;
+				background: #333;
+			}
+
+			.olControlScaleBarMarkerMinor {
+				height: 5px;
+				width: 1px;
+				top: 12px;
+				background: #333;
+			}
+
+			.olControlScaleBarNumbersBox {
+				width: 40px;
+				height: 13px;
+				top: 21px;
+				font-size: 0.7em;
+			}
+
+			.olControlScaleBarLabelBox {
+				top: -2px;
+				height: 15px;
+				font-weight: bold;
+				letter-spacing: 0.1em;
+				font-size: 0.7em;
+				font-variant: small-caps;
+			}
+
+			.olControlScaleBarLabelBoxSingleLine {
+				height: 15px;
+				width: 35px;
+				top: 5px;
+				left: 10px;
+				font-size: 0.7em;
+				font-variant: small-caps;
+			}
+		</style>
+			<div style="width:210mm;height:297mm;margin-left:auto;margin-right:auto;">
+				<div id="logo"></div>
+				<div id="title" contenteditable="true"></div>
+				<div id="map" style="position:relative;width:100%;height:80% !important;overflow:hidden;"></div>
+				<div id="abstract" contenteditable="true"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,478 @@
+.disabled{
+	opacity:0.5;
+}
+
+.x-tree-node{
+	
+	display: inline;
+	
+}
+
+.rbLogo{
+	z-index:1000;
+	position:absolute;
+	bottom:20px;
+	right:15px;
+}
+
+.tlLogo{
+	z-index:1000;
+	position:absolute;
+	top:10px;
+	left:15px;
+	width:200px;
+}
+
+.en_us{
+	background-image: url('../images/flags/eng.png');
+	background-size:16px 16px;
+}
+
+.el_gr{
+	background-image: url('../images/flags/gre.png');
+	background-size:16px 16px;
+}
+
+.getsdi{
+	background-image: url('../images/getsdi.png');
+	background-size:16px 16px;
+}
+
+/**************** Custom Openlayers CSS ************************/
+
+.olImageLoadError{display: none !important;}
+
+.column_grid_images{cursor:pointer;}
+
+.olControlScaleBar {
+    bottom: 30px;
+    left: 10px;
+    font-family: sans-serif;
+    color: #000;
+}
+
+.olControlScaleBarBar {
+    height: 1px;
+    top: 14px;
+    background: #333;
+}
+
+.olControlScaleBarBarAlt {
+    height: 1px;
+    top: 14px;
+    background: #333;
+}
+
+.olControlScaleBarMarkerMajor {
+    height: 7px;
+    width: 1px;
+    top: 11px;
+    background: #333;
+}
+
+.olControlScaleBarMarkerMinor {
+    height: 5px;
+    width: 1px;
+    top: 12px;
+    background: #333;
+}
+
+.olControlScaleBarNumbersBox {
+    width: 40px;
+    height: 13px;
+    top: 21px;
+    font-size: 0.7em;
+}
+
+.olControlScaleBarLabelBox {
+    top: -2px;
+    height: 15px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    font-size: 0.7em;
+    font-variant: small-caps;
+}
+
+.olControlScaleBarLabelBoxSingleLine {
+    height: 15px;
+    width: 35px;
+    top: 5px;
+    left: 10px;
+    font-size: 0.7em;
+    font-variant: small-caps;
+}
+/**************** Custom ExtJS CSS ************************/
+
+.x-grid-cell-inner {
+ 
+   white-space: normal;
+}
+
+.no-wrap{
+	white-space: nowrap;
+}
+
+
+
+/**************** general************************/
+
+.maptab_accordion_icon{
+	background-image: url('../images/interpolate.png');
+	background-size:16px 16px;
+}
+.map_general_add_btn{
+	background-image: url('../images/add.png');
+	background-size:16px 16px;
+}
+.map_general_settings_btn{
+	background-image: url('../images/settings.png');
+	background-size:16px 16px;
+}
+.map_general_copy_btn{
+	background-image: url('../images/copy.png');
+	background-size:16px 16px;
+}
+.map_general_cancel_btn{
+	background-image: url('../images/cancel.png');
+	background-size:16px 16px;
+}
+.map_general_remove_btn {
+	background-image: url('../images/remove.png');
+	background-size:16px 16px;
+}
+.map_general_setting_btn {
+	background-image: url('../images/settings.png');
+	background-size:16px 16px;
+}
+.map_general_clear_btn{
+	background-image: url('../images/clear.png');
+	background-size:16px 16px;
+}
+.map_general_loading{
+	background-image: url('../images/loading.gif');
+	background-size:16px 16px;
+}
+/**************** maptab_toolbar_general************************/
+
+.maptab_toolbar_general_pan{
+	background-image: url('../images/mapPan.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_pan_left{
+	background-image: url('../images/mapPanLeft.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_pan_right{
+	background-image: url('../images/mapPanRight.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_pan_up{
+	background-image: url('../images/mapPanUp.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_pan_down{
+	background-image: url('../images/mapPanDown.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_extent  {
+	background-image: url('../images/zoomExtent.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_navigation  {
+	background-image: url('../images/mapPan.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_zoomByArea  {
+	background-image: url('../images/zoomRegion.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_zoomPrevious  {
+	background-image: url('../images/zoomLast.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_zoomNext {
+	background-image: url('../images/zoomNext.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_zoomIn {
+	background-image: url('../images/zoomIn.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_zoomOut {
+	background-image: url('../images/zoomOut.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_measureDistance {
+	background-image: url('../images/distanceMeasurement.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_measureArea {
+	background-image: url('../images/areaMeasurement.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_measureClear {
+	background-image: url('../images/clearMeasurement.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_setCoordinates  {
+	background-image: url('../images/convertPointCoordinates.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_getCoordinates  {
+	background-image: url('../images/getPointCoordinates.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_print  {
+	background-image: url('../images/print.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_featureInfo  {
+	background-image: url('../images/identify.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_general_googlestreet  {
+	background-image: url('../images/svhuman.png');
+	background-size:16px 16px;
+}
+
+.maptab_toolbar_general_googleearth  {
+	background-image: url('../images/ge.png');
+	background-size:16px 16px;
+}
+
+.maptab_toolbar_general_icon{
+	background-image: url('../images/general.png');
+	background-size:16px 16px;
+}
+/**************** maptab_toolbar_search************************/
+
+.maptab_toolbar_search {
+	background-image: url('../images/search.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_search_polygon {
+	background-image: url('../images/searchPolygon.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_search_line{
+	background-image: url('../images/searchLine.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_search_rectangle{
+	background-image: url('../images/searchRectangle.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_search_circle{
+	background-image: url('../images/searchCircle.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_search_clear {
+	background-image: url('../images/searchClear.png');
+	background-size:16px 16px;
+	
+}
+
+/**************** maptab_toolbar_edit************************/
+.maptab_toolbar_edit_point{
+	background-image: url('../images/drawPoint.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_line {
+	background-image: url('../images/drawLine.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_polygon {
+	background-image: url('../images/drawPolygon.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_select_by_point{
+	background-image: url('../images/selectbypoint.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_select_by_box{
+	background-image: url('../images/selectbybox.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_unselect{
+	background-image: url('../images/unselect.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit {
+	background-image: url('../images/edit.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_copy {
+	background-image: url('../images/copy.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_paste {
+	background-image: url('../images/paste.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_move {
+	background-image: url('../images/move.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_delete {
+	background-image: url('../images/delete.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_merge {
+	background-image: url('../images/merge.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_split {
+	background-image: url('../images/split.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_undo {
+	background-image: url('../images/undo.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_redo {
+	background-image: url('../images/redo.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_save{
+	background-image: url('../images/save.png');
+	background-size:16px 16px;
+}
+.maptab_toolbar_edit_refresh{
+	background-image: url('../images/refresh.png');
+	background-size:16px 16px;
+}
+
+/**************** maptab_services_manager************************/
+.maptab_services_manager_register{
+	background-image: url('../images/add.png');
+	background-size:16px 16px;
+}
+.maptab_services_manager_unregister{
+	background-image: url('../images/remove.png');
+	background-size:16px 16px;
+}
+.maptab_services_issecure{
+	background-image: url('../images/isSecure.png');
+	background-size:16px 16px;
+}
+.maptab_services_manager_show_layers{
+
+}
+.maptab_services_manager_settings_layer{
+
+}
+.maptab_services_manager_layer_legend_size{
+	width: 18px!important;
+	height: 18px!important;
+	background-size:16px 16px;
+}
+
+/**************** features************************/
+.features_toolbar_showonmap {
+	background-image: url('../images/show.png');
+	background-size:16px 16px;
+}
+.features_toolbar_download {
+	background-image: url('../images/download.png');
+	background-size:16px 16px;
+}
+.features_toolbar_addtoselected {
+	background-image: url('../images/addToSelected.png');
+	background-size:16px 16px;
+}
+.features_toolbar_edit{
+	background-image: url('../images/edit.png');
+	background-size:16px 16px;
+}
+.features_toolbar_save{
+	background-image: url('../images/save.png');
+	background-size:16px 16px;
+}
+.features_toolbar_cancel{
+	background-image: url('../images/cancel.png');
+	background-size:16px 16px;
+}
+.features_toolbar_showinfow {
+	background-image: url('../images/featureInfoWindow.png');
+	background-size:16px 16px;
+}
+.features_toolbar_highlight {
+	background-image: url('../images/highlight.png');
+	background-size:16px 16px;
+}
+
+/**************** maptab_layer_tree************************/
+.maptab_layer_tree_opacity {
+	background-image: url('../images/layer.png');
+	background-size:16px 16px;
+}
+
+.maptab_layer_tree_refresh{
+	background-image: url('../images/refresh.png');
+	background-size:16px 16px;
+}
+
+/**************** other************************/
+.tiff{
+	background-image: url('../images/tiff.png');
+	background-size:16px 16px;
+}
+.svg{
+	background-image: url('../images/svg.png');
+	background-size:16px 16px;
+}
+.kml{
+	background-image: url('../images/kml.png');
+	background-size:16px 16px;
+}
+.shapefile{
+	background-image: url('../images/shapefile.png');
+	background-size:16px 16px;
+}
+.csv{
+	background-image: url('../images/csv.png');
+	background-size:16px 16px;
+}
+.pdf{
+	background-image: url('../images/pdf.png');
+	background-size:16px 16px;
+}
+.play{
+	background-image: url('../images/play.png');
+	background-size:16px 16px;
+}
+.stop{
+	background-image: url('../images/stop.png');
+	background-size:16px 16px;
+}
+.pause{
+	background-image: url('../images/pause.png');
+	background-size:16px 16px;
+}
+.chart{
+	background-image: url('../images/chart.png');
+	background-size:16px 16px;
+}
+.save{
+	background-image: url('../images/save.png');
+	background-size:16px 16px;
+}
+.refresh{
+	background-image: url('../images/refresh.png');
+	background-size:16px 16px;
+}
+
+.google{
+	background-image: url('../images/google.png');
+	background-size:16px 16px;
+}
+
+
+
+.mydraw_management_window_btn{
+	background-image: url('../images/layer-edit.png');
+	background-size:16px 16px;
+}
+
+
+

@@ -1,0 +1,34 @@
+.add
+{
+	background-image: url( ../images/add.png ) !important;
+}
+
+.edit
+{
+	background-image: url( ../images/edit.png ) !important;
+}
+
+.delete
+{
+	background-image: url( ../images/delete.png ) !important;
+}
+
+.activate
+{
+	background-image: url( ../images/activate.png ) !important;
+}
+
+.inactivate
+{
+	background-image: url( ../images/inactivate.png ) !important;
+}
+
+.filter
+{
+	background-image: url( ../images/filter.png ) !important;
+}
+
+.clear-filters
+{
+	background-image: url( ../images/clear-filters.png ) !important;
+}

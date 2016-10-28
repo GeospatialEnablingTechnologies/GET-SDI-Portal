@@ -7,10 +7,8 @@ function showColorpickerWindow(colorpickerFiredId,colorpickerDefaultColor)
 		height:200,
 		modal:true,
 		resizable:false,
-		id:'thematicLayerWindowColorId',
-		title:thematicLayerWindowColorTitle,
 		plain:true,
-		html:"<iframe src='"+getsdiportal_URI+"modules/colorpicker/colorpicker.php?id="+colorpickerFiredId+"&color="+colorpickerDefaultColor+"' height='200px' width='360px' frameborder='no'></iframe>"
+		html:"<iframe src='modules/colorpicker/colorpicker.html?id="+colorpickerFiredId+"&color="+colorpickerDefaultColor+"' height='200px' width='360px' frameborder='no'></iframe>"
 	});
 
 	colorpickerWindow.show();

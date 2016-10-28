@@ -1,0 +1,9 @@
+.x-action-col-cell img {
+	height: 16px;
+	width: 16px;
+	cursor: pointer;
+}
+
+.x-action-col-img-noaction {
+	cursor: default !important;
+}
