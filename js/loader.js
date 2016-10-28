@@ -69,7 +69,7 @@ var topRightBanner = "";
 
 var configFile = "config_en.js"; 
 
-var aboutFile = "";
+var aboutFile = "About_GET_SDI_Portalv4_EN.pdf";
 
 var manualFile = "GETSDIPortalv4_Help_GR_v1.0.pdf";
 
@@ -97,7 +97,7 @@ function fn_getLanguageFile()
 			
 			configFile = "config_gr.js";
 			
-			aboutFile = "";
+			aboutFile = "About_GET_SDI_Portalv4_GR.pdf";
 			
 			manualFile = "GETSDIPortalv4_Help_GR_v1.0.pdf";
 			
@@ -120,7 +120,7 @@ function fn_getLanguageFile()
 			
 			configFile = "config_en.js";
 			
-			aboutFile = "";
+			aboutFile = "About_GET_SDI_Portalv4_EN.pdf";
 			
 			manualFile = "GETSDIPortalv4_Help_GR_v1.0.pdf";
 			
