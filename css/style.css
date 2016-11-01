@@ -8,6 +8,17 @@
 	
 }
 
+
+.x-tree-icon-parent {
+    background-image: url('../images/folder-close.png') !important;
+    background-repeat: no-repeat;
+}
+
+.x-grid-tree-node-expanded .x-tree-icon-parent {
+    background-image: url("../images/folder-open.png")!important;
+}
+
+
 .rbLogo{
 	z-index:1000;
 	position:absolute;
