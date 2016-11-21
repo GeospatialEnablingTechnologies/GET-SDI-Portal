@@ -1,3 +1,5 @@
+var infowindowoffsetposition  = -200;
+
 function fn_featureObject(record)
 {
 	
@@ -155,8 +157,12 @@ function fn_createFetureGridTopBar()
 			{
 				var selected=Ext.getCmp(this.findParentByType("grid").id).getSelectionModel().getSelection();
 				
+				infowindowoffsetposition = -200;
+				
 				Ext.each(selected,function(item)
 				{
+					infowindowoffsetposition = infowindowoffsetposition + 10;
+					
 					fn_callFeatureFnFromGrid(item.get("_featureId"),item.get("_layerId"),item.get("_srsName"),item.get("_featureUrl"),item.get("_featureGeomFormat"),'getInfo');
 				});
 			}
@@ -732,7 +738,9 @@ function fn_callFeatureFnFromGrid(_featureId,_layerId,_srsName,_featureUrl,_feat
 	switch(fn_param)
 	{
 		case "getInfo":
-			fn_featureInfoWindow(feature).show();
+			var _infowin = fn_featureInfoWindow(feature);
+			_infowin.show();
+			_infowin.alignTo(Ext.getCmp('maptab_center'), "c", [infowindowoffsetposition, infowindowoffsetposition]);
 		break;
 	}
 }
