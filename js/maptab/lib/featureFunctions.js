@@ -1188,6 +1188,7 @@ var featureInfoWindow_isMinimized=false;
 
 function fn_featureInfoWindow(_feature)
 {
+	var infolayertitle = mapFindLayerById(_feature._layerId)._layerObject._layerTitle;
 
 	var _w_id = Ext.id();
 
@@ -1298,7 +1299,7 @@ function fn_featureInfoWindow(_feature)
 		width:440,
 		height:405,
 		id:_w_id,
-		title:_maptab_featureInfoWindow_title,
+		title:_maptab_featureInfoWindow_title + ': ' + infolayertitle,
 		plain:true,
 		bbar:init_featureInfoWindow_bbar,
 		tbar:init_featureInfoWindow_tbar,
