@@ -226,7 +226,9 @@ var loader_script_files=[
 	
 	"js/config_functions.js",
 	
-	"modules/featurehits/featurehits.js"
+	"modules/featurehits/featurehits.js",
+	
+	"modules/legend/legend.js"
 ];
 
 /***(var) loader_css_files: stores all the internal css (styles) urls to be included*****/
