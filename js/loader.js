@@ -103,6 +103,7 @@ function fn_getLanguageFile()
 			
 			languageBtn={
 				xtype:"button",
+				id: "languageBtn",
 				iconCls:"en_us",
 				handler:function()
 				{
@@ -126,6 +127,7 @@ function fn_getLanguageFile()
 			
 			languageBtn={
 				xtype:"button",
+				id: "languageBtn",
 				iconCls:"el_gr",
 				handler:function()
 				{
