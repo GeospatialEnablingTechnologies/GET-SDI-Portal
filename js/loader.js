@@ -233,7 +233,9 @@ var loader_script_files=[
 	"modules/legend/legend.js",
 	
 	"modules/bookmarks/lib/AddIns/Bookmark.js",
-        "modules/bookmarks/bookmarks.js"
+        "modules/bookmarks/bookmarks.js",
+	
+	"modules/intropopup/intropopup.js"
 ];
 
 /***(var) loader_css_files: stores all the internal css (styles) urls to be included*****/
