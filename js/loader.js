@@ -230,7 +230,10 @@ var loader_script_files=[
 	
 	"modules/featurehits/featurehits.js",
 	
-	"modules/legend/legend.js"
+	"modules/legend/legend.js",
+	
+	"modules/bookmarks/lib/AddIns/Bookmark.js",
+        "modules/bookmarks/bookmarks.js"
 ];
 
 /***(var) loader_css_files: stores all the internal css (styles) urls to be included*****/
@@ -238,6 +241,7 @@ var loader_css_files=[
 	"tools/extjs/resources/css/ext-all.css",
 	"tools/extjs/resources/ext-theme-gray/ext-theme-gray-all.css",
 	"tools/extjs/plugins/boxselect/BoxSelect.css",
+	"modules/bookmarks/lib/AddIns/bookmark.css",
 	"css/style.css"
 ];
 
