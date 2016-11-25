@@ -12,8 +12,7 @@ var legend_translation = {
 }
 
 function init_legend() {
-    var main_panel = Ext.getCmp('maptab_west');
-
+    
     var mapLegend = [{
         xtype: 'panel',
         id: 'legendPanelID',
@@ -31,7 +30,7 @@ function init_legend() {
 
     }];
 
-    main_panel.add(mapLegend);
+    Ext.getCmp("maptab_west").insert(1,mapLegend);
 }
 
 init_onload_fn.push(init_legend);
