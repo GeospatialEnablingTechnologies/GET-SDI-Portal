@@ -49,6 +49,10 @@ var quickSearchStore = Ext.create('Ext.data.Store', {
 			type: 'json'
 		}
 	},
+	sorters: [{
+		property: '_label',
+		direction: 'ASC' // or 'ASC'
+        }],
 	listeners:{
 		beforeload:function(store){
 			Ext.Ajax.abort(); 
