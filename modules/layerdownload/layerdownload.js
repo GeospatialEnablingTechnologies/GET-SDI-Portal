@@ -36,7 +36,7 @@ var layerdownloads = function(){return {
 							
 							var _layerObject = mapFindLayerById(_layerId)._layerObject;
 						
-							var _w = fn_downloadLayerCharset(_layerObject, _serviceObject, "application/csv", "text/csv");
+							var _w = fn_downloadLayerCharset(_layerObject, _serviceObject, "csv", "text/csv");
 						
 							_w.show();
 						}
@@ -191,7 +191,7 @@ function fn_downloadLayerCharset(_layerObject, _serviceObject, _format, _content
 					
 					var _url = fn_downloadLayer(_layerObject, _serviceObject, _format, _content_type, _charset, _epsg);
 					
-					if ((_format=="shape-zip") || (_format=="application/csv"))
+					if ((_format=="shape-zip") || (_format=="csv"))
 					{
 						_url = fn_downloadLayerVector(_layerObject, _serviceObject, _format, _content_type, _charset, _epsg);
 					}
