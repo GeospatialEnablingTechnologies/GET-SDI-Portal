@@ -83,8 +83,6 @@ function init_swipe() {
                 try{
                     var ly = records[0].data._layerObject;
 
-                    console.log(ly);
-
                     swipe_layer = new OpenLayers.Layer.WMS(
                         ly._layerName,
                         ly._layer.url,
