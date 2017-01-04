@@ -235,6 +235,9 @@ var loader_script_files=[
 	"modules/bookmarks/lib/AddIns/Bookmark.js",
         "modules/bookmarks/bookmarks.js",
 	
+	"modules/swipe/swipe/lib/Swipe.js",
+	"modules/swipe/swipe.js",
+	
 	"modules/intropopup/intropopup.js"
 ];
 
@@ -244,6 +247,7 @@ var loader_css_files=[
 	"tools/extjs/resources/ext-theme-gray/ext-theme-gray-all.css",
 	"tools/extjs/plugins/boxselect/BoxSelect.css",
 	"modules/bookmarks/lib/AddIns/bookmark.css",
+	"modules/swipe/swipe/css/swipe.css",
 	"css/style.css"
 ];
 
