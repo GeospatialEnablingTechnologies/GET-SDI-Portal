@@ -39,7 +39,10 @@ function init_swipe() {
 
 
                 if (!state) {
-                    map.removeLayer(swipe_layer);
+                    try {
+                        map.removeLayer(swipe_layer);
+                    }
+                    catch (err){}
                     Ext.getCmp('swipe_choose_layero').setValue(swipe_translation[language].combo_select);
                     Ext.getCmp('swipe_choose_layero').disable();
                     swipe.deactivate();
@@ -82,6 +85,11 @@ function init_swipe() {
 
                 try{
                     var ly = records[0].data._layerObject;
+                    
+                    var timest = null;
+                    if (typeof ly._layer.params.TIME !=="undefined"){
+                        timest = ly._layer.params.TIME;
+                    }
 
                     swipe_layer = new OpenLayers.Layer.WMS(
                         ly._layerName,
@@ -91,7 +99,8 @@ function init_swipe() {
                             "format": ly._layerFormat,
                             "version": "1.1.1",
                             "transparent": "TRUE",
-                            "styles": ""
+                            "styles": "",
+                            "time": timest
                         });
 
                     map.addLayers([swipe_layer]);
