@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $nodes = array();
 
 $path = isset($_REQUEST['path'])&&$_REQUEST['path'] == 'files' ? '/files' : '';
@@ -20,6 +22,14 @@ if (is_dir($directory)){
 		
 		if (($folder!="..") && ($folder!="."))
 		{
+			
+			$st = $node.'/'.$f;
+			if(isset($_SESSION['credentials'])){
+			    $st = '../'.$node.'/'.$f;
+			}
+			else {
+			    $st = $node.'/'.$f;
+			}
 	
 			if(is_dir($directory.'/'.$folder)){
 				$nodes[] = array(
@@ -30,7 +40,7 @@ if (is_dir($directory)){
 			} else {
 				$nodes[] = array(
 					'text' => $f,
-					'id'   => $node.'/'.$f,
+					'id'   => $st,
 					'leaf' => true,
 					'cls'  => 'file'
 				);
