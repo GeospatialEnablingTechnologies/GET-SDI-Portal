@@ -248,8 +248,12 @@ echo $_config_init_map;
 
 echo "\r\n\r\n";
 
+function replace_unicode_escape_sequence($match) {
+    return mb_convert_encoding(pack('H*', $match[1]), 'UTF-8', 'UCS-2BE');
+}
+
 function jsonRemoveUnicodeSequences($struct) {
-   return preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))", json_encode($struct));
+   return preg_replace_callback("/\\\\u([a-f0-9]{4})/i", 'replace_unicode_escape_sequence', json_encode($struct));
 }
 
 
