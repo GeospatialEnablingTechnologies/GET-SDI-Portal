@@ -63,14 +63,14 @@ TabsViewportUi = Ext.extend(Ext.Viewport, {
 						border:false,
 						layout:'fit',
 						html:"<iframe src='"+host+"about/"+aboutFile+"' height='100%' width='100%' frameborder='no'></iframe>"
-					}/*,
+					},
 					{
 						xtype:'panel',
 						title:_viewport_manualtab,
 						border:false,
 						layout:'fit',
 						html:"<iframe src='"+host+"about/"+manualFile+"' height='100%' width='100%' frameborder='no'></iframe>"
-					}*/
+					}
 				]
 			}
 		];
