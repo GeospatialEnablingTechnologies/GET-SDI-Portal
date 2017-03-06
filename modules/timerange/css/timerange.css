@@ -1,0 +1,29 @@
+
+.maptab_toolbar_timerange {
+    background-image: url('../images/timerange.png');
+    background-size:16px 16px;
+}
+
+.maptab_toolbar_timerange_play {
+    background-image: url('../images/Player_Play.png');
+    background-size:16px 16px;
+}
+
+.maptab_toolbar_timerange_stop {
+    background-image: url('../images/Player_Stop.png');
+    background-size:16px 16px;
+}
+
+.maptab_toolbar_timerange_previous {
+    background-image: url('../images/Player_Previous.png');
+    background-size:16px 16px;
+}
+
+.maptab_toolbar_timerange_next {
+    background-image: url('../images/Player_Next.png');
+    background-size:16px 16px;
+}
+
+.x-btn-pressed.filter-btn .x-btn-text {
+    background-image: url('../images/Player_Stop.png');
+}
