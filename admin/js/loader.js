@@ -155,7 +155,8 @@ var loader_script_files=[
 	"tools/shapefileToGeoJson/shapefile.js",
 	"tools/shapefileToGeoJson/dbf.js",
 	
-	"tools/OpenLayers/OpenLayers.js",
+	//"tools/OpenLayers/OpenLayers.js",
+	"tools/OpenLayers/OpenLayers.2.13.2.js",
 	"tools/OpenLayers/lib/OpenLayers/Control/ScaleBar.js",
 	"tools/OpenLayers/lib/OpenLayers/Handler/Path.js",
 	"tools/OpenLayers/lib/OpenLayers/Layer/EsriGeoJSON.js",
