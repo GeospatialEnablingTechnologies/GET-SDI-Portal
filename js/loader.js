@@ -142,7 +142,7 @@ function fn_getLanguageFile()
 
 /***(var) loader_script_urls: stores all the external js script urls to be included*****/
 var loader_script_urls=[
-	"https://maps.googleapis.com/maps/api/js?key=AIzaSyCW1r76P8CrMJ27JbSyK-InFSmtrC6L28A",
+	"https://maps.googleapis.com/maps/api/js?key=YOUR_KEY",
 	"http://www.google.com/jsapi?language=el"
 ]
 
