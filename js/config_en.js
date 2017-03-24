@@ -227,6 +227,50 @@ function _config_init_map()
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
 						
 					})
+			},
+			{
+				_layer:new OpenLayers.Layer.Google(
+					"Google Satellite",
+					{
+						type: google.maps.MapTypeId.SATELLITE,
+						numZoomLevels: 20,
+						isBaseLayer:true,
+						sphericalMercator: true,
+						icon:'images/earth.png',
+						projection:new OpenLayers.Projection("EPSG:900913"),
+						fractionalZoom:false
+					})
+			},
+			{
+				_layer:new OpenLayers.Layer.Google(
+					"Google Streets",
+					{
+						type: google.maps.MapTypeId.ROADMAP,
+						numZoomLevels: 20,
+						sphericalMercator: true,
+						icon:'images/earth.png',
+						isBaseLayer:true,
+						projection:new OpenLayers.Projection("EPSG:900913"),
+						fractionalZoom:false,
+						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
+					},{
+
+						projection:new OpenLayers.Projection("EPSG:900913")
+					})
+			},
+			{
+				_layer:new OpenLayers.Layer.Google(
+					"Google Hybrid",
+					{
+						type: google.maps.MapTypeId.HYBRID,
+						numZoomLevels: 30,
+						sphericalMercator: true,
+						isBaseLayer:true,
+						icon:'images/earth.png',
+						projection:new OpenLayers.Projection("EPSG:900913"),
+						fractionalZoom:false,
+						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
+					})
 			}
 		]
 	}
