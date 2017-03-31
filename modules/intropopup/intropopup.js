@@ -1,12 +1,11 @@
 var intropopup_translations ={
 	en_us:{
 		title:'Εφαρμογή Θέασης & Αναζήτησης Χωρικών Δεδομένων',
-		body:'<br>Καλώς ήρθατε στην Διαδικτυακή Εφαρμογή Θέασης & Αναζήτησης Χωρικών Δεδομένων. <br><br>'
-	
+		body:'<p style="margin: 10px;" align="center">Καλώς ήρθατε στην Διαδικτυακή Εφαρμογή <br>Θέασης & Αναζήτησης Χωρικών Δεδομένων. </p> <p align="center"><img src="' + host + 'modules/intropopup/images/get_logo.png" alt="" width="200"></p>'
 	},
 	el_gr:{
-		title:'Εφαρμογή Θέασης & Αναζήτησης Χωρικών Πεδίου',
-		body:'<br>Καλώς ήρθατε στην Διαδικτυακή Εφαρμογή Θέασης & Αναζήτησης Χωρικών Δεδομένων. <br><br>'
+		title:'Εφαρμογή Θέασης & Αναζήτησης Χωρικών Δεδομένων',
+		body:'<p style="margin: 10px;" align="center">Καλώς ήρθατε στην Διαδικτυακή Εφαρμογή <br>Θέασης & Αναζήτησης Χωρικών Δεδομένων. </p> <p align="center"><img src="' + host + 'modules/intropopup/images/get_logo.png" alt="" width="200"></p>'
 	}
 	
 }
