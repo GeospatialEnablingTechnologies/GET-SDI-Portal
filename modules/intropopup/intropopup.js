@@ -21,11 +21,19 @@ var intropopup= new Ext.Window({
 	title:intropopup_translations[language].title,
 	resizable:false,
 	closeAction:'destroy',
+	closable:false,
 	layout:'fit',
+	buttonAlign : 'center',
 	items:[{
 		xtype:'panel',
 		border:false,
 		html:intropopup_translations[language].body
+	}],
+	buttons: [{
+		text     : 'Είσοδο στην Εφαρμογή',
+		handler  : function(){
+			intropopup.close();
+		}
 	}]
 });
 
