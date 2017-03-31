@@ -161,7 +161,7 @@ function _config_init_map() {
 				_layer:new OpenLayers.Layer.OSM(
 					"OpenSreetMap",
 					"",{
-						icon:'images/earth.png',
+						icon:'../images/earth.png',
 						projection:new OpenLayers.Projection("EPSG:900913"),
 						fractionalZoom:false,
 						isBaseLayer:true,
@@ -177,7 +177,7 @@ function _config_init_map() {
 						'https://b.tile.thunderforest.com/cycle/\${z}/\${x}/\${y}.png',
                         'https://c.tile.thunderforest.com/cycle/\${z}/\${x}/\${y}.png'
 					],{
-						icon:'images/earth.png',
+						icon:'../images/earth.png',
 						projection:new OpenLayers.Projection("EPSG:900913"),
 						fractionalZoom:false,
 						isBaseLayer:true,
@@ -191,7 +191,7 @@ function _config_init_map() {
 					[
 						"http://tile2.opencyclemap.org/transport/\${z}/\${x}/\${y}.png",
 					],{
-						icon:'images/earth.png',
+						icon:'../images/earth.png',
 						projection:new OpenLayers.Projection("EPSG:900913"),
 						fractionalZoom:false,
 						isBaseLayer:true,
@@ -207,7 +207,7 @@ function _config_init_map() {
 						"http://b.tile.openstreetmap.fr/hot/\${z}/\${x}/\${y}.png",
 						"http://c.tile.openstreetmap.fr/hot/\${z}/\${x}/\${y}.png"
 					],{
-						icon:'images/earth.png',
+						icon:'../images/earth.png',
 						projection:new OpenLayers.Projection("EPSG:900913"),
 						fractionalZoom:false,
 						isBaseLayer:true,
@@ -219,7 +219,7 @@ function _config_init_map() {
 				_layer:new OpenLayers.Layer.Vector(
 					"Blank",
 					{
-						icon:'images/earth.png',
+						icon:'../images/earth.png',
 						projection:new OpenLayers.Projection("EPSG:900913"),
 						fractionalZoom:false,
 						isBaseLayer:true,
@@ -235,7 +235,7 @@ function _config_init_map() {
 						numZoomLevels: 20,
 						isBaseLayer:true,
 						sphericalMercator: true,
-						icon:'images/earth.png',
+						icon:'../images/earth.png',
 						projection:new OpenLayers.Projection("EPSG:900913"),
 						fractionalZoom:false
 					})
@@ -247,7 +247,7 @@ function _config_init_map() {
 						type: google.maps.MapTypeId.ROADMAP,
 						numZoomLevels: 20,
 						sphericalMercator: true,
-						icon:'images/earth.png',
+						icon:'../images/earth.png',
 						isBaseLayer:true,
 						projection:new OpenLayers.Projection("EPSG:900913"),
 						fractionalZoom:false,
@@ -265,7 +265,7 @@ function _config_init_map() {
 						numZoomLevels: 30,
 						sphericalMercator: true,
 						isBaseLayer:true,
-						icon:'images/earth.png',
+						icon:'../images/earth.png',
 						projection:new OpenLayers.Projection("EPSG:900913"),
 						fractionalZoom:false,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
