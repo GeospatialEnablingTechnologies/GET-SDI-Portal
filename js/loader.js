@@ -67,13 +67,13 @@ var topBanner = host + "images/logos/logo.png";
 
 var topRightBanner = "";
 
-var configFile = "config_en.js"; 
+var configFile = "config_gr.js"; 
 
-var aboutFile = "About_GET_SDI_Portalv4_EN.pdf";
+var aboutFile = "About_GET_SDI_Portalv4_GR.pdf";
 
 var manualFile = "GETSDIPortalv4_Help_GR_v1.0.pdf";
 
-var languageFile = "en_us.js";
+var languageFile = "el_gr.js";
 
 fn_getLanguageFile();
 
@@ -89,31 +89,7 @@ function fn_getLanguageFile()
 	switch(lang)
 	{
 		
-		case "gr":
-		
-			languageFile = "el_gr.js";
-			
-			topBanner = host + "images/logos/logo.png";
-			
-			configFile = "config_gr.js";
-			
-			aboutFile = "About_GET_SDI_Portalv4_GR.pdf";
-			
-			manualFile = "GETSDIPortalv4_Help_GR_v1.0.pdf";
-			
-			languageBtn={
-				xtype:"button",
-				id: "languageBtn",
-				iconCls:"en_us",
-				handler:function()
-				{
-					window.location=host+"?lang=EN";
-				}
-			};
-			
-		break;
-		
-		default:
+		case "en":
 		
 			languageFile = "en_us.js";
 			
@@ -133,7 +109,31 @@ function fn_getLanguageFile()
 				{
 					window.location=host;
 				}
-			};
+			};	
+			
+		break;
+		
+		default:
+		
+			languageFile = "el_gr.js";
+			
+			topBanner = host + "images/logos/logo.png";
+			
+			configFile = "config_gr.js";
+			
+			aboutFile = "About_GET_SDI_Portalv4_GR.pdf";
+			
+			manualFile = "GETSDIPortalv4_Help_GR_v1.0.pdf";
+			
+			languageBtn={
+				xtype:"button",
+				id: "languageBtn",
+				iconCls:"en_us",
+				handler:function()
+				{
+					window.location=host+"?lang=EN";
+				}
+			};			
 		
 		break;
 	}
