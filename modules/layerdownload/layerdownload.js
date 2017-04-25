@@ -22,8 +22,27 @@ var layerdownloads = function(){return {
 		render:function()
 		{
 			var _layerId=this.ownerCt._nodeId;
-			
-			if((mapFindLayerById(_layerId)._serviceObject._isService) && ((mapFindLayerById(_layerId)._serviceObject._serviceType=="WFS") || (mapFindLayerById(_layerId)._serviceObject._serviceType=="WMS")))
+
+			if((mapFindLayerById(_layerId)._serviceObject._isService)  && (mapFindLayerById(_layerId)._serviceObject._serviceUrl.includes('sentinel'))){
+				this.setMenu(Ext.create("Ext.menu.Menu", {
+					floating: true,
+					items:[{
+						text:'GeoTIFF',
+						iconCls:'tiff',
+						handler:function()
+						{
+							var _serviceObject = mapFindLayerById(_layerId)._serviceObject;
+
+							var _layerObject = mapFindLayerById(_layerId)._layerObject;
+
+							var _url = fn_downloadLayerSentinel(_layerObject, _serviceObject, "GeoTIFF", "image/tiff", "", "");
+
+							window.open(_url);
+						}
+					}]
+				}));
+			}
+			else if((mapFindLayerById(_layerId)._serviceObject._isService) && ((mapFindLayerById(_layerId)._serviceObject._serviceType=="WFS") || (mapFindLayerById(_layerId)._serviceObject._serviceType=="WMS")))
 			{
                 this.setMenu(Ext.create("Ext.menu.Menu", {
                     floating: true,
@@ -238,6 +257,40 @@ function fn_downloadLayer(_layerObject, _serviceObject, _format, _content_type, 
 	}
 	
 	return _url;
+}
+
+function fn_downloadLayerSentinel(_layerObject, _serviceObject, _format, _content_type, _charset, _epsg)
+{
+    var _bbox = map.getExtent();
+
+    var _width = _bbox.getWidth();
+
+    var _height = _bbox.getHeight();
+
+    var _newWidth= 800;
+
+    var _ratio=(_height/_width);
+
+    var _newHeight = Math.floor(_newWidth * _ratio);
+
+    var _url = Ext.urlAppend(_serviceObject._serviceUrl.replace('wms','wcs'), "REQUEST=GetCoverage&SERVICE=WCS&VERSION=1.0.0&COVERAGE="+_layerObject._layerName+"&identifiers="+_layerObject._layerName+"&FORMAT="+_format+"&ATMFILTER=ATMCOR&CRS=EPSG:3857&BBOX="+_bbox.left+","+_bbox.bottom+","+_bbox.right+","+_bbox.top+"&subset=y("+_bbox.bottom+","+_bbox.top+")&subset=x("+_bbox.left+","+_bbox.right+")");
+
+    if (_charset!="")
+    {
+        _url = Ext.urlAppend(_url,"FORMAT_OPTIONS=CHARSET:"+_charset);
+    }
+
+    if (_epsg!="")
+    {
+        _url = Ext.urlAppend(_url,"SRSNAME="+_epsg);
+    }
+
+    if (_serviceObject._isSecure)
+    {
+        _url = _proxy_url+"?proxy=raw&contentype="+_content_type+"&url="+_url;
+    }
+
+    return _url;
 }
 
 function fn_downloadLayerVector(_layerObject, _serviceObject, _format, _content_type, _charset, _epsg)
