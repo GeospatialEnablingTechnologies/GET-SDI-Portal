@@ -90,6 +90,66 @@ function init_swipe() {
                     if (typeof ly._layer.params.TIME !=="undefined"){
                         timest = ly._layer.params.TIME;
                     }
+                    
+                    var ATMFILTER = null;
+                    if (typeof ly._layer.params.ATMFILTER !=="undefined"){
+                        ATMFILTER = ly._layer.params.ATMFILTER;
+                    }
+
+                    var MAXCC = null;
+                    if (typeof ly._layer.params.MAXCC !=="undefined"){
+                        MAXCC = ly._layer.params.MAXCC;
+                    }
+
+                    var CLOUDCORRECTION = null;
+                    if (typeof ly._layer.params.CLOUDCORRECTION !=="undefined"){
+                        CLOUDCORRECTION = ly._layer.params.CLOUDCORRECTION;
+                    }
+
+                    var CLOUDBUFFER = null;
+                    if (typeof ly._layer.params.CLOUDBUFFER !=="undefined"){
+                        CLOUDBUFFER = ly._layer.params.CLOUDBUFFER;
+                    }
+
+                    var PRIORITY = null;
+                    if (typeof ly._layer.params.PRIORITY !=="undefined"){
+                        PRIORITY = ly._layer.params.PRIORITY;
+                    }
+
+                    var PREVIEW = null;
+                    if (typeof ly._layer.params.PREVIEW !=="undefined"){
+                        PREVIEW = ly._layer.params.PREVIEW;
+                    }
+
+                    var GAIN = null;
+                    if (typeof ly._layer.params.GAIN !=="undefined"){
+                        GAIN = ly._layer.params.GAIN;
+                    }
+
+                    var GAMMA = null;
+                    if (typeof ly._layer.params.GAMMA !=="undefined"){
+                        GAMMA = ly._layer.params.GAMMA;
+                    }
+
+                    var OFFSET = null;
+                    if (typeof ly._layer.params.OFFSET !=="undefined"){
+                        OFFSET = ly._layer.params.OFFSET;
+                    }
+
+                    var QUALITY = null;
+                    if (typeof ly._layer.params.QUALITY !=="undefined"){
+                        QUALITY = ly._layer.params.QUALITY;
+                    }
+
+                    var UPSAMPLING = null;
+                    if (typeof ly._layer.params.UPSAMPLING !=="undefined"){
+                        UPSAMPLING = ly._layer.params.UPSAMPLING;
+                    }
+
+                    var DOWNSAMPLING = null;
+                    if (typeof ly._layer.params.DOWNSAMPLING !=="undefined"){
+                        DOWNSAMPLING = ly._layer.params.DOWNSAMPLING;
+                    }
 
                     swipe_layer = new OpenLayers.Layer.WMS(
                         ly._layerName,
@@ -100,7 +160,19 @@ function init_swipe() {
                             "version": "1.1.1",
                             "transparent": "TRUE",
                             "styles": "",
-                            "time": timest
+                            "time": timest,
+                            "ATMFILTER": ATMFILTER,
+                            "MAXCC": MAXCC,
+                            "CLOUDCORRECTION": CLOUDCORRECTION,
+                            "CLOUDBUFFER": CLOUDBUFFER,
+                            "PRIORITY": PRIORITY,
+                            "PREVIEW": PREVIEW,
+                            "GAIN": GAIN,
+                            "GAMMA": GAMMA,
+                            "OFFSET": OFFSET,
+                            "QUALITY": QUALITY,
+                            "UPSAMPLING": UPSAMPLING,
+                            "DOWNSAMPLING": DOWNSAMPLING
                         });
 
                     map.addLayers([swipe_layer]);
