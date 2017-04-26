@@ -62,70 +62,70 @@ function sentinellayers_option_w(_layerId) {
         ATMFILTER = mapFindLayerById(_layerId).params['ATMFILTER'];
     }
     else {
-        ATMFILTER = 'NONE';
+        ATMFILTER = null;
     }
 
     if (mapFindLayerById(_layerId).params['MAXCC'] != null) {
         MAXCC = mapFindLayerById(_layerId).params['MAXCC'];
     }
     else {
-        MAXCC = 20;
+        MAXCC = null;
     }
 
     if (mapFindLayerById(_layerId).params['CLOUDCORRECTION'] != null) {
         CLOUDCORRECTION = mapFindLayerById(_layerId).params['CLOUDCORRECTION'];
     }
     else {
-        CLOUDCORRECTION = 'none';
+        CLOUDCORRECTION = null;
     }
 
     if (mapFindLayerById(_layerId).params['CLOUDBUFFER'] != null) {
         CLOUDBUFFER = mapFindLayerById(_layerId).params['CLOUDBUFFER'];
     }
     else {
-        CLOUDBUFFER = 320;
+        CLOUDBUFFER = null;
     }
 
     if (mapFindLayerById(_layerId).params['PRIORITY'] != null) {
         PRIORITY = mapFindLayerById(_layerId).params['PRIORITY'];
     }
     else {
-        PRIORITY = 'mostRecent';
+        PRIORITY = null;
     }
 
     if (mapFindLayerById(_layerId).params['PREVIEW'] != null) {
         PREVIEW = mapFindLayerById(_layerId).params['PREVIEW'];
     }
     else {
-        PREVIEW = '0';
+        PREVIEW = null;
     }
 
     if (mapFindLayerById(_layerId).params['GAIN'] != null) {
         GAIN = mapFindLayerById(_layerId).params['GAIN'];
     }
     else {
-        GAIN = 1;
+        GAIN = null;
     }
 
     if (mapFindLayerById(_layerId).params['GAMMA'] != null) {
         GAMMA = mapFindLayerById(_layerId).params['GAMMA'];
     }
     else {
-        GAMMA = 1;
+        GAMMA = null;
     }
 
     if (mapFindLayerById(_layerId).params['OFFSET'] != null) {
         OFFSET = mapFindLayerById(_layerId).params['OFFSET'];
     }
     else {
-        OFFSET = 0;
+        OFFSET = null;
     }
 
     if (mapFindLayerById(_layerId).params['QUALITY'] != null) {
         QUALITY = mapFindLayerById(_layerId).params['QUALITY'];
     }
     else {
-        QUALITY = 90;
+        QUALITY = null;
     }
 
 
@@ -133,14 +133,14 @@ function sentinellayers_option_w(_layerId) {
         UPSAMPLING = mapFindLayerById(_layerId).params['UPSAMPLING'];
     }
     else {
-        UPSAMPLING = 'NEAREST';
+        UPSAMPLING = null;
     }
 
     if (mapFindLayerById(_layerId).params['DOWNSAMPLING'] != null) {
         DOWNSAMPLING = mapFindLayerById(_layerId).params['DOWNSAMPLING'];
     }
     else {
-        DOWNSAMPLING = 'NEAREST';
+        DOWNSAMPLING = null;
     }
 
     var _w = new Ext.Window({
@@ -235,7 +235,7 @@ function sentinellayers_option_w(_layerId) {
                     fieldLabel: 'Priority',
                     store: new Ext.data.SimpleStore({
                         fields: ['title', 'value'],
-                        data: [["mostRecent", "mostRecent"], ["leastRecent", "leastRecent"], ["leastCC", "leastCC"], ["leastTimeDifference", "leastTimeDifference"], ["maximumViewingElevation", "maximumViewingElevation"]]
+                        data: [["mostRecent", "mostRecent"], ["leastRecent", "leastRecent"], ["leastCC", "leastCC"]]
                     }),
                     displayField: 'title',
                     valueField: 'value',
