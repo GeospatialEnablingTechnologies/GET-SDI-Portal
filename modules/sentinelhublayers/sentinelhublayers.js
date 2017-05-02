@@ -20,10 +20,13 @@ var sentinellayers_sentinel_option = 0;
 
 function sentinellayers_setoptions(_layer) {
 
-    if (_layer.layer.url.includes('sentinel') && sentinellayers_sentinel_option == 0) {
-        _maptab_west_layer_layer_menu_components.push(new sentinellayers_options);
-        sentinellayers_sentinel_option = 1;
+    if(typeof _layer.layer.url !== 'undefined'){
+        if (_layer.layer.url.includes('sentinel') && sentinellayers_sentinel_option == 0) {
+            _maptab_west_layer_layer_menu_components.push(new sentinellayers_options);
+            sentinellayers_sentinel_option = 1;
+        }
     }
+
 }
 
 var sentinellayers_options = function () {
