@@ -149,8 +149,8 @@ function _config_init_map()
 			units: "km", 
 			zoomMethod:null,
 			transitionEffect:null,
-			projection:new OpenLayers.Projection("EPSG:900913"),
-			displayProjection: new OpenLayers.Projection("EPSG:4326"),
+			projection:new OpenLayers.Projection("EPSG:3857"),
+			displayProjection: new OpenLayers.Projection("EPSG:3857"),
 			maxExtent: new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34"),
 			controls:[]
 		},
@@ -163,7 +163,7 @@ function _config_init_map()
 					"OpenSreetMap",
 					"",{
 						icon:'images/earth.png',
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
@@ -179,7 +179,7 @@ function _config_init_map()
                         'https://c.tile.thunderforest.com/cycle/\${z}/\${x}/\${y}.png'
 					],{
 						icon:'images/earth.png',
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
@@ -193,7 +193,7 @@ function _config_init_map()
 						"http://tile2.opencyclemap.org/transport/\${z}/\${x}/\${y}.png",
 					],{
 						icon:'images/earth.png',
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
@@ -209,7 +209,7 @@ function _config_init_map()
 						"http://c.tile.openstreetmap.fr/hot/\${z}/\${x}/\${y}.png"
 					],{
 						icon:'images/earth.png',
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
@@ -221,7 +221,7 @@ function _config_init_map()
 					"Blank",
 					{
 						icon:'images/earth.png',
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
@@ -237,7 +237,7 @@ function _config_init_map()
 						isBaseLayer:true,
 						sphericalMercator: true,
 						icon:'images/earth.png',
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false
 					})
 			},
@@ -250,7 +250,7 @@ function _config_init_map()
 						sphericalMercator: true,
 						icon:'images/earth.png',
 						isBaseLayer:true,
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
 					},{
@@ -267,7 +267,7 @@ function _config_init_map()
 						sphericalMercator: true,
 						isBaseLayer:true,
 						icon:'images/earth.png',
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
 					})
