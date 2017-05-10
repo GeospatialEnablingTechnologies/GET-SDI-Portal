@@ -253,7 +253,9 @@ function replace_unicode_escape_sequence($match) {
 }
 
 function jsonRemoveUnicodeSequences($struct) {
-   return preg_replace_callback("/\\\\u([a-f0-9]{4})/i", 'replace_unicode_escape_sequence', json_encode($struct));
+    return preg_replace_callback("/\\\\u([a-f0-9]{4})/i", 'replace_unicode_escape_sequence', json_encode($struct));
+  // return json_encode($struct);
+
 }
 
 
