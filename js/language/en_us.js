@@ -124,6 +124,8 @@ var _maptab_services_manager_add_choices_remove_groups = "Remove current groups"
 
 var _maptab_services_manager_shapefile_shp = "Shp File";
 var _maptab_services_manager_shapefile_dbf = "Dbf File";
+var _maptab_services_manager_shapefile_shx = "Shx File";
+var _maptab_services_manager_shapefile_prj = "Prj File";
 var _maptab_services_manager_shapefile_projection = "Projection System";
 var _maptab_services_manager_shapefile_charset = "Charset";
 
