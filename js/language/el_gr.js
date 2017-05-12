@@ -122,6 +122,8 @@ var _maptab_services_manager_add_choices_remove_groups = "Αφαίρεση τρ�
 
 var _maptab_services_manager_shapefile_shp = "Αρχείο Shp";
 var _maptab_services_manager_shapefile_dbf = "Αρχείο dbf";
+var _maptab_services_manager_shapefile_shx = "Αρχείο shx";
+var _maptab_services_manager_shapefile_prj = "Αρχείο prj";
 var _maptab_services_manager_shapefile_projection = "Σύστημα Συντεταγμένων";
 var _maptab_services_manager_shapefile_charset = "Κωδικοποίηση Χαρακτήρων";
 
