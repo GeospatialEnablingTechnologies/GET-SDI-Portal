@@ -57,9 +57,9 @@ function map_controls_featureInfo() {
 
         map_controls_featureInfo_request = new fn_get();
 
-        var _config=new _config_init_map();
+        var _config = maptab_west_general_settings_store.findRecord("_generalSettingId", "maptab_west_general_settings_data_set_mousemouve_info").data._generalSettingRawValue;
 
-        if(_config._setMousemoveInfo){
+        if(_config == 'true'){
             mapOnMouseMove(map_controls_featureInfo_moveEvent);
         }
     }
@@ -93,9 +93,9 @@ function init_map_controls_featureInfo() {
 
     map_controls_featureInfo_request = new fn_get();
 
-    var _config=new _config_init_map();
+    var _config = maptab_west_general_settings_store.findRecord("_generalSettingId", "maptab_west_general_settings_data_set_mousemouve_info").data._generalSettingRawValue;
 
-        if(_config._setMousemoveInfo){
+        if(_config == 'true'){
             mapOnMouseMove(map_controls_featureInfo_moveEvent);
         }
 }
