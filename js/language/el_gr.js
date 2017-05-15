@@ -126,6 +126,7 @@ var _maptab_services_manager_shapefile_shx = "Αρχείο shx";
 var _maptab_services_manager_shapefile_prj = "Αρχείο prj";
 var _maptab_services_manager_shapefile_projection = "Σύστημα Συντεταγμένων";
 var _maptab_services_manager_shapefile_charset = "Κωδικοποίηση Χαρακτήρων";
+var _maptab_services_manager_shapefile_comment = "Σημείωση: Το μέγεθος κάθε αρχείου δεν θα πρέπει να ξεπερνά τα 5MB και ο αριθμός των πεδίων να είναι μικρότερος του 10";
 
 var _maptab_services_manager_wms_layer_settings_visibility='Ορατό';
 var _maptab_services_manager_wms_layer_settings_opacity='Διαφάνεια';
