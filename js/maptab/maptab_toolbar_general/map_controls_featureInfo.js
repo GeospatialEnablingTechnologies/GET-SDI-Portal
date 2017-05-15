@@ -57,7 +57,11 @@ function map_controls_featureInfo() {
 
         map_controls_featureInfo_request = new fn_get();
 
-        mapOnMouseMove(map_controls_featureInfo_moveEvent);
+        var _config=new _config_init_map();
+
+        if(_config._setMousemoveInfo){
+            mapOnMouseMove(map_controls_featureInfo_moveEvent);
+        }
     }
 }
 
@@ -89,7 +93,11 @@ function init_map_controls_featureInfo() {
 
     map_controls_featureInfo_request = new fn_get();
 
-    mapOnMouseMove(map_controls_featureInfo_moveEvent);
+    var _config=new _config_init_map();
+
+        if(_config._setMousemoveInfo){
+            mapOnMouseMove(map_controls_featureInfo_moveEvent);
+        }
 }
 
 function map_controls_featureInfo_clickEvent(e) {
