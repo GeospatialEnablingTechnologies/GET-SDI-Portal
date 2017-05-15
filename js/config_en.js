@@ -142,6 +142,7 @@ function _config_init_map()
 		],
 		_defaultProjection:"EPSG:900913",
 		_setCoordinatesZoomLevel:20,
+		_setMousemoveInfo:false,
 		_setCoordinatesDefaultProjections:["GGRS 87 (EPSG:2100)","Google Mercator (EPSG:900913)","WGS 84 (EPSG:4326)"],
 		_getCoordinatesDefaultProjections:["GGRS 87 (EPSG:2100)","Google Mercator (EPSG:900913)","WGS 84 (EPSG:4326)"],
 		_mapUnits:[],
