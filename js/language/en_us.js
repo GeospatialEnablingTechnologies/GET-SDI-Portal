@@ -323,6 +323,7 @@ var _maptab_west_general_settings_group_map_tools="Map Tools";
 var _maptab_west_general_settings_data_get_coordinates_projections="Get Coordinates Projections";
 var _maptab_west_general_settings_data_set_coordinates_projections="Set Coordinates Projections";
 var _maptab_west_general_settings_data_set_coordinates_zoom="Set Coordinates Zoom Level";
+var _maptab_west_general_settings_data_set_mousemove_info="Auto Feature Info";
 var _maptab_west_general_settings_data_set_coordinates_marker="Set Coordinates Show Marker";
 var _maptab_west_general_settings_group_scale_bar="Scale Bar";
 var _maptab_west_general_settings_data_scale_bar_showMinorMeasures="Show Subdivision Measures";
