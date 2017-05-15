@@ -320,6 +320,7 @@ var _maptab_west_general_settings_group_map_tools="Εργαλεία Χάρτη";
 var _maptab_west_general_settings_data_get_coordinates_projections="Συστήματα Αναφοράς - Εμφάνιση Συν/νων Σημείου";
 var _maptab_west_general_settings_data_set_coordinates_projections="Συστήματα Αναφοράς - Ορισμός Σημείου";
 var _maptab_west_general_settings_data_set_coordinates_zoom="Επίπεδο Εστίασης - Ορισμός Σημείου";
+var _maptab_west_general_settings_data_set_mousemove_info="Αυτόματη Αναγνώριση Επιπέδων";
 var _maptab_west_general_settings_data_set_coordinates_marker="Εμφάνιση συμβόλου - Ορισμός Σημείου";
 var _maptab_west_general_settings_group_scale_bar="Μπάρα Κλίμακας";
 var _maptab_west_general_settings_data_scale_bar_showMinorMeasures="Εμφάνιση Τιμών Υποδιαιρέσεων";
