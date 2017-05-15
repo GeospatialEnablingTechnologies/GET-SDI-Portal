@@ -101,7 +101,8 @@ function map_controls_featureInfo_moveEvent(e) {
     if (e && ((e.xy.x != map_controls_featureInfo_moveEvent_oldX) || (e.xy.y != map_controls_featureInfo_moveEvent_oldY))) {
 
         try{
-            map_controls_freatureInfo_win_getInfo.destroy();
+            //map_controls_freatureInfo_win_getInfo.destroy();
+            Ext.getCmp('map_controls_freatureInfo_win_getInfo_id').destroy();
         }catch(err){}
 
         map_controls_featureInfo_moveEvent_oldX = e.xy.x;
@@ -171,8 +172,7 @@ function map_controls_featureInfo_success(_response, _opts) {
 
     Ext.each(_response, function (item) {
         Ext.each(item._response._attributes, function (record) {
-            if (record[0]._featureGeomFormat == "CUSTOM") {
-
+            try{
                 var _attributesFields = new Array();
 
                 for (var k in mapGetFeatureByFid(record[0]._layerId, record[0]._featureId).attributes) {
@@ -199,11 +199,45 @@ function map_controls_featureInfo_success(_response, _opts) {
 
                 _data.push(_record);
             }
-            else {
+            catch (err){
                 var _record = fn_createAttributeSummary(record[0], mapFindLayerById(item._response._layerId)._layerObject._attributesFields);
 
                 _data.push(_record);
             }
+
+            // if (record[0]._featureGeomFormat == "CUSTOM") {
+            //
+            //     var _attributesFields = new Array();
+            //
+            //     for (var k in mapGetFeatureByFid(record[0]._layerId, record[0]._featureId).attributes) {
+            //         _attributesFields.push({
+            //             "_attributeName": k.toString(),
+            //             "_attributeType": "string",
+            //             "_attributeTranslation": null,
+            //             "_attributeValue": null,
+            //             "_attributeEditor": null,
+            //             "_attributeIsSortable": true,
+            //             "_attributeOrder": 0,
+            //             "_attributeIsVisible": true,
+            //             "_attributeIsSearchable": true,
+            //             "_attributeIsGeometry": false,
+            //             "_attributeVisible": true,
+            //             "_geometryIsMulti": false,
+            //             "_attributeShowOnSummary": false
+            //         });
+            //
+            //         record[0][k.toString()] = mapGetFeatureByFid(record[0]._layerId, record[0]._featureId).attributes[k];
+            //     }
+            //
+            //     var _record = fn_createAttributeSummary(record[0], _attributesFields);
+            //
+            //     _data.push(_record);
+            // }
+            // else {
+            //     var _record = fn_createAttributeSummary(record[0], mapFindLayerById(item._response._layerId)._layerObject._attributesFields);
+            //
+            //     _data.push(_record);
+            // }
 
 
         });
@@ -266,6 +300,7 @@ function map_controls_featureInfo_success(_response, _opts) {
 
         if (map_controls_featureInfo_html_ToolTip != "") {
             map_controls_freatureInfo_win_getInfo = new Ext.Window({
+                id: 'map_controls_freatureInfo_win_getInfo_id',
                 layout: 'fit',
                 renderTo: map.div.id,
                 border: false,
