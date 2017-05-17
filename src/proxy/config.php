@@ -25,6 +25,7 @@
 		"wfs"=>"http://www.opengis.net/wfs",
 		"wms"=>"http://www.opengis.net/wms",
 		"ogc"=>"http://www.opengis.net/ogc",
+		"ogr"=>"http://ogr.maptools.org/",
 		"xlink"=>"http://www.w3.org/1999/xlink",
 		"xsd"=>"http://www.w3.org/2001/XMLSchema",
 		"wfs2"=>"http://www.opengis.net/wfs/2.0",
@@ -38,7 +39,9 @@
 	
 	$_config["GML"]=array(
 		"_featureMemberCount"=>"string(count(//wfs:FeatureCollection/gml:featureMember))",
-		"_featureMember"=>"//wfs:FeatureCollection/gml:featureMember[]"
+		"_featureMember"=>"//wfs:FeatureCollection/gml:featureMember[]",
+		"_featureMemberCountTILE"=>"string(count(//ogr:FeatureCollection/gml:featureMember/ogr:TILE))",
+        	"_featureMemberTILE"=>"//ogr:FeatureCollection/gml:featureMember/ogr:TILE[]"
 	);
 	
 	$_config["DESCRIBEFEATURETYPE"]=array(

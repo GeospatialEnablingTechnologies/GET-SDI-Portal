@@ -142,6 +142,7 @@ function _config_init_map()
 		],
 		_defaultProjection:"EPSG:900913",
 		_setCoordinatesZoomLevel:20,
+		_setMousemoveInfo:true,
 		_setCoordinatesDefaultProjections:["ΕΓΣΑ 87 (EPSG:2100)","Google Mercator (EPSG:900913)","WGS 84 (EPSG:4326)"],
 		_getCoordinatesDefaultProjections:["ΕΓΣΑ 87 (EPSG:2100)","Google Mercator (EPSG:900913)","WGS 84 (EPSG:4326)"],
 		_mapUnits:[],
@@ -149,8 +150,8 @@ function _config_init_map()
 			units: "km", 
 			zoomMethod:null,
 			transitionEffect:null,
-			projection:new OpenLayers.Projection("EPSG:900913"),
-			displayProjection: new OpenLayers.Projection("EPSG:4326"),
+			projection:new OpenLayers.Projection("EPSG:3857"),
+			displayProjection: new OpenLayers.Projection("EPSG:3857"),
 			maxExtent: new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34"),
 			controls:[]
 		},
@@ -163,7 +164,7 @@ function _config_init_map()
 					"OpenSreetMap",
 					"",{
 						icon:'images/earth.png',
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
@@ -179,7 +180,7 @@ function _config_init_map()
                         'https://c.tile.thunderforest.com/cycle/\${z}/\${x}/\${y}.png'
 					],{
 						icon:'images/earth.png',
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
@@ -193,7 +194,7 @@ function _config_init_map()
 						"http://tile2.opencyclemap.org/transport/\${z}/\${x}/\${y}.png",
 					],{
 						icon:'images/earth.png',
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
@@ -209,7 +210,7 @@ function _config_init_map()
 						"http://c.tile.openstreetmap.fr/hot/\${z}/\${x}/\${y}.png"
 					],{
 						icon:'images/earth.png',
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
@@ -221,11 +222,55 @@ function _config_init_map()
 					"Blank",
 					{
 						icon:'images/earth.png',
-						projection:new OpenLayers.Projection("EPSG:900913"),
+						projection:new OpenLayers.Projection("EPSG:3857"),
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
 						
+					})
+			},
+			{
+				_layer:new OpenLayers.Layer.Google(
+					"Google Satellite",
+					{
+						type: google.maps.MapTypeId.SATELLITE,
+						numZoomLevels: 20,
+						isBaseLayer:true,
+						sphericalMercator: true,
+						icon:'images/earth.png',
+						projection:new OpenLayers.Projection("EPSG:3857"),
+						fractionalZoom:false
+					})
+			},
+			{
+				_layer:new OpenLayers.Layer.Google(
+					"Google Streets",
+					{
+						type: google.maps.MapTypeId.ROADMAP,
+						numZoomLevels: 20,
+						sphericalMercator: true,
+						icon:'images/earth.png',
+						isBaseLayer:true,
+						projection:new OpenLayers.Projection("EPSG:3857"),
+						fractionalZoom:false,
+						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
+					},{
+
+						projection:new OpenLayers.Projection("EPSG:900913")
+					})
+			},
+			{
+				_layer:new OpenLayers.Layer.Google(
+					"Google Hybrid",
+					{
+						type: google.maps.MapTypeId.HYBRID,
+						numZoomLevels: 30,
+						sphericalMercator: true,
+						isBaseLayer:true,
+						icon:'images/earth.png',
+						projection:new OpenLayers.Projection("EPSG:3857"),
+						fractionalZoom:false,
+						maxExtent:new OpenLayers.Bounds.fromString("-20037508.34,-20037508.34,20037508.34,20037508.34")
 					})
 			}
 		]

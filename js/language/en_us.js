@@ -124,6 +124,8 @@ var _maptab_services_manager_add_choices_remove_groups = "Remove current groups"
 
 var _maptab_services_manager_shapefile_shp = "Shp File";
 var _maptab_services_manager_shapefile_dbf = "Dbf File";
+var _maptab_services_manager_shapefile_shx = "Shx File";
+var _maptab_services_manager_shapefile_prj = "Prj File";
 var _maptab_services_manager_shapefile_projection = "Projection System";
 var _maptab_services_manager_shapefile_charset = "Charset";
 
@@ -321,6 +323,7 @@ var _maptab_west_general_settings_group_map_tools="Map Tools";
 var _maptab_west_general_settings_data_get_coordinates_projections="Get Coordinates Projections";
 var _maptab_west_general_settings_data_set_coordinates_projections="Set Coordinates Projections";
 var _maptab_west_general_settings_data_set_coordinates_zoom="Set Coordinates Zoom Level";
+var _maptab_west_general_settings_data_set_mousemove_info="Auto Feature Info";
 var _maptab_west_general_settings_data_set_coordinates_marker="Set Coordinates Show Marker";
 var _maptab_west_general_settings_group_scale_bar="Scale Bar";
 var _maptab_west_general_settings_data_scale_bar_showMinorMeasures="Show Subdivision Measures";

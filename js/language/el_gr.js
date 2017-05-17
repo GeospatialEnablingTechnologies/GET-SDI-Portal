@@ -122,8 +122,11 @@ var _maptab_services_manager_add_choices_remove_groups = "Αφαίρεση τρ�
 
 var _maptab_services_manager_shapefile_shp = "Αρχείο Shp";
 var _maptab_services_manager_shapefile_dbf = "Αρχείο dbf";
+var _maptab_services_manager_shapefile_shx = "Αρχείο shx";
+var _maptab_services_manager_shapefile_prj = "Αρχείο prj";
 var _maptab_services_manager_shapefile_projection = "Σύστημα Συντεταγμένων";
 var _maptab_services_manager_shapefile_charset = "Κωδικοποίηση Χαρακτήρων";
+var _maptab_services_manager_shapefile_comment = "Σημείωση: Το μέγεθος κάθε αρχείου δεν θα πρέπει να ξεπερνά τα 5MB και ο αριθμός των πεδίων να είναι μικρότερος του 10";
 
 var _maptab_services_manager_wms_layer_settings_visibility='Ορατό';
 var _maptab_services_manager_wms_layer_settings_opacity='Διαφάνεια';
@@ -318,6 +321,7 @@ var _maptab_west_general_settings_group_map_tools="Εργαλεία Χάρτη";
 var _maptab_west_general_settings_data_get_coordinates_projections="Συστήματα Αναφοράς - Εμφάνιση Συν/νων Σημείου";
 var _maptab_west_general_settings_data_set_coordinates_projections="Συστήματα Αναφοράς - Ορισμός Σημείου";
 var _maptab_west_general_settings_data_set_coordinates_zoom="Επίπεδο Εστίασης - Ορισμός Σημείου";
+var _maptab_west_general_settings_data_set_mousemove_info="Αυτόματη Αναγνώριση Επιπέδων";
 var _maptab_west_general_settings_data_set_coordinates_marker="Εμφάνιση συμβόλου - Ορισμός Σημείου";
 var _maptab_west_general_settings_group_scale_bar="Μπάρα Κλίμακας";
 var _maptab_west_general_settings_data_scale_bar_showMinorMeasures="Εμφάνιση Τιμών Υποδιαιρέσεων";

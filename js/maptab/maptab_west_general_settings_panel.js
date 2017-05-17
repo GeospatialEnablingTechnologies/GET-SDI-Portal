@@ -309,6 +309,46 @@ function init_maptab_west_general_settings_store_load_data()
 			_generalSettingGroup:_maptab_west_general_settings_group_map_tools
 		},
 		{
+			_generalSettingId:'maptab_west_general_settings_data_set_mousemouve_info',
+			_generalSettingTitle:_maptab_west_general_settings_data_set_mousemove_info,
+			_generalSettingRawValue:_config._setMousemoveInfo,
+			_generalSettingValue:_config._setMousemoveInfo,
+			_generalSettingEditor:{
+				xtype:'combobox',
+				viewConfig: {
+					markDirty:false
+				},
+				store:new Ext.data.SimpleStore({
+					fields: ['name','value'],
+					data:[[_map_general_yes,true],[_map_general_no,false]]
+				}),
+				listeners:{
+					select:function(combo,record)
+					{
+						var record=record[0];
+
+						if (record.data.value)
+						{
+							_config._setMousemoveInfo = record.data.value;
+							mapOnMouseMove(map_controls_featureInfo_moveEvent);
+						}else{
+							_config._setMousemoveInfo = record.data.value;
+							mapUnregisterEvents("mousemove", map_controls_featureInfo_moveEvent);
+						}
+					}
+				},
+				displayField: 'name',
+				valueField: 'value',
+				forceSelection: true,
+				triggerAction: 'all',
+				selectOnFocus: false,
+				mode: 'local',
+				value: true,
+				editable: false
+			},
+			_generalSettingGroup:_maptab_west_general_settings_group_map_tools
+		},
+		{
 			_generalSettingId:'maptab_west_general_settings_data_set_coordinates_marker',
 			_generalSettingTitle:_maptab_west_general_settings_data_set_coordinates_marker,
 			_generalSettingRawValue:"",

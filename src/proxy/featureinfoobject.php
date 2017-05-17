@@ -67,13 +67,11 @@ class FEATUREINFOOBJECT
         if ($p->o_responseCode == 200)
         {
 			libxml_use_internal_errors(true);
-		
 			$xml=new DOMDocument();
 			
 			$xml->loadXML($p->o_response);
 			
 			$xpath = new DOMXPath($xml);
-		
 			foreach($_config["NAMESPACES"] as $key=>$value)
 			{
 				$xpath->registerNamespace($key,$value);
@@ -143,6 +141,89 @@ class FEATUREINFOOBJECT
 				$f_response[]=$r_attributes;
 				
 			}
+
+
+########################## new ##########################
+
+		        $countFeatureMembersTILE =$p->xmlNode($section["_featureMemberCountTILE"]);
+
+		        for ($i=1;$i<=$countFeatureMembersTILE;$i++)
+            			{
+            				$r_attributes = array();
+
+            				$nodes = $xpath->query(str_replace("[]","[".$i."]",$section["_featureMemberTILE"]));
+
+            				$v = array();
+
+            				foreach ($nodes as $node)
+            				{
+
+            					foreach($node->childNodes as $n)
+            					{
+
+
+            						if ($n->firstChild->namespaceURI!= $_config["NAMESPACES"]["gml"])
+            						{
+            							$v[$n->localName]=$n->nodeValue;
+            						}
+            						else
+            						{
+            							$feature_srs = $n->firstChild->getAttribute("srsName");
+            						}
+            					}
+
+            					$v["_layerId"]=$objArr->_layerId;
+
+            					#print_r($v);
+            					#print_r($feature_srs);
+
+            					#$featureId = $node->firstChild->getAttribute("id");
+
+            					$featureId = 1;
+
+                                #print_r($featureId);
+
+            					#echo $node;
+            				}
+
+                            #print_r($objArr);
+
+            				if (!empty($objArr->_featureType))
+            				{
+            					if (strpos($featureId,$objArr->_featureType)<0)
+            					{
+            						$featureId = $objArr->_featureType.".".$featureId;
+            					}
+            				}
+
+
+            				$v["_featureId"]=$featureId;
+
+            				$v["_srsName"]="EPSG:3857";
+
+
+
+            				if ($objArr->_request=="search")
+            				{
+            					$v["_featureUrl"]=self::createGetSearchUrl($objArr, $featureId);
+
+            				}
+            				else
+            				{
+            					$v["_featureUrl"]=self::createGetFeatureUrl($objArr, $featureId);
+            				}
+
+            				$v["_featureGeomFormat"]="gml";
+
+            				$r_attributes[]=$v;
+
+            				$f_response[]=$r_attributes;
+
+
+
+            			}
+
+########################## new ##########################
 	
 			return $f_response;
 
@@ -196,6 +277,12 @@ class FEATUREINFOOBJECT
 				$_query["HEIGHT"]=$_REQUEST["_height"];
 				$_query["X"]=$_REQUEST["_x"];
 				$_query["Y"]=$_REQUEST["_y"];
+
+########################## new ##########################
+				$_query["I"]=$_REQUEST["_x"];
+                $_query["J"]=$_REQUEST["_y"];
+########################## new ##########################
+				
 				$_query["BBOX"]=$_REQUEST["_bbox"];
 				$_query["SRS"]=$_REQUEST["_srs"];
 				$_query["LAYERS"]=$objArr->_layerName;
@@ -211,7 +298,7 @@ class FEATUREINFOOBJECT
 			case "WFS":
 				$_query["REQUEST"]="GETFEATURE";
 				$_query["SERVICE"]="WFS";
-				$_query["VERSION"]="1.1.0";
+				$_query["VERSION"]="2.0.0";
 				$_query["FEATUREID"]=$objArr->_featureId;
 				$_query["OUTPUTFORMAT"]=$objArr->_featureInfoFormat;
 				$_query["TYPENAME"]=$objArr->_layerName;
@@ -227,7 +314,7 @@ class FEATUREINFOOBJECT
 		
         $_query["REQUEST"]="GETFEATURE";
         $_query["SERVICE"]="WFS";
-		$_query["VERSION"]="1.1.0";
+		$_query["VERSION"]="2.0.0";
         $_query["OUTPUTFORMAT"]="GML2";
         $_query["TYPENAME"]=$objArr->_layerName;
         $_query["CQL_FILTER"]=str_replace("%","%25",$objArr->_cqlFilter);
@@ -242,7 +329,7 @@ class FEATUREINFOOBJECT
 		
 		$_query["REQUEST"]="GETFEATURE";
 		$_query["SERVICE"]="WFS";
-		$_query["VERSION"]="1.1.0";
+		$_query["VERSION"]="2.0.0";
 		$_query["OUTPUTFORMAT"]="GML2";
 		$_query["TYPENAME"]=$objArr->_layerName;
 		$_query["FEATUREID"]=$featureId;
@@ -262,6 +349,12 @@ class FEATUREINFOOBJECT
 				$_query["HEIGHT"]=$_REQUEST["_height"];
 				$_query["X"]=$_REQUEST["_x"];
 				$_query["Y"]=$_REQUEST["_y"];
+
+########################## new ##########################
+				$_query["I"]=$_REQUEST["_x"];
+                $_query["J"]=$_REQUEST["_y"];
+########################## new ##########################
+
 				$_query["BBOX"]=$_REQUEST["_bbox"];
 				$_query["SRS"]=$_REQUEST["_srs"];
 				$_query["LAYERS"]=$objArr->_layerName;
@@ -273,7 +366,7 @@ class FEATUREINFOOBJECT
 			case "WFS":
 				$_query["REQUEST"]="GETFEATURE";
 				$_query["SERVICE"]="WFS";
-				$_query["VERSION"]="1.1.0";
+				$_query["VERSION"]="2.0.0";
 				$_query["FEATUREID"]=$featureId;
 				$_query["OUTPUTFORMAT"]=$objArr->_featureInfoFormat;
 				$_query["TYPENAME"]=$objArr->_layerName;

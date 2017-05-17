@@ -67,13 +67,13 @@ var topBanner = host + "images/logos/logo.png";
 
 var topRightBanner = "";
 
-var configFile = "config_en.js"; 
+var configFile = "config_gr.js"; 
 
-var aboutFile = "About_GET_SDI_Portalv4_EN.pdf";
+var aboutFile = "About_GET_SDI_Portalv4_GR.pdf";
 
 var manualFile = "GETSDIPortalv4_Help_GR_v1.0.pdf";
 
-var languageFile = "en_us.js";
+var languageFile = "el_gr.js";
 
 fn_getLanguageFile();
 
@@ -89,30 +89,7 @@ function fn_getLanguageFile()
 	switch(lang)
 	{
 		
-		case "gr":
-		
-			languageFile = "el_gr.js";
-			
-			topBanner = host + "images/logos/logo.png";
-			
-			configFile = "config_gr.js";
-			
-			aboutFile = "About_GET_SDI_Portalv4_GR.pdf";
-			
-			manualFile = "GETSDIPortalv4_Help_GR_v1.0.pdf";
-			
-			languageBtn={
-				xtype:"button",
-				iconCls:"en_us",
-				handler:function()
-				{
-					window.location=host+"?lang=EN";
-				}
-			};
-			
-		break;
-		
-		default:
+		case "en":
 		
 			languageFile = "en_us.js";
 			
@@ -126,12 +103,37 @@ function fn_getLanguageFile()
 			
 			languageBtn={
 				xtype:"button",
+				id: "languageBtn",
 				iconCls:"el_gr",
 				handler:function()
 				{
 					window.location=host;
 				}
-			};
+			};	
+			
+		break;
+		
+		default:
+		
+			languageFile = "el_gr.js";
+			
+			topBanner = host + "images/logos/logo.png";
+			
+			configFile = "config_gr.js";
+			
+			aboutFile = "About_GET_SDI_Portalv4_GR.pdf";
+			
+			manualFile = "GETSDIPortalv4_Help_GR_v1.0.pdf";
+			
+			languageBtn={
+				xtype:"button",
+				id: "languageBtn",
+				iconCls:"en_us",
+				handler:function()
+				{
+					window.location=host+"?lang=EN";
+				}
+			};			
 		
 		break;
 	}
@@ -139,7 +141,10 @@ function fn_getLanguageFile()
 
 
 /***(var) loader_script_urls: stores all the external js script urls to be included*****/
-var loader_script_urls=[]
+var loader_script_urls=[
+	"https://maps.googleapis.com/maps/api/js?key=YOUR_KEY",
+	"http://www.google.com/jsapi?language=el"
+]
 
 /***(var) loader_script_files: stores all the internal js script urls to be included*****/
 var loader_script_files=[
@@ -155,7 +160,8 @@ var loader_script_files=[
 	"tools/shapefileToGeoJson/shapefile.js",
 	"tools/shapefileToGeoJson/dbf.js",
 	
-	"tools/OpenLayers/OpenLayers.js",
+	//"tools/OpenLayers/OpenLayers.js",
+	"tools/OpenLayers/OpenLayers.2.13.2.full.js",
 	"tools/OpenLayers/lib/OpenLayers/Control/ScaleBar.js",
 	"tools/OpenLayers/lib/OpenLayers/Handler/Path.js",
 	"tools/OpenLayers/lib/OpenLayers/Layer/EsriGeoJSON.js",
@@ -226,7 +232,17 @@ var loader_script_files=[
 	
 	"js/config_functions.js",
 	
-	"modules/featurehits/featurehits.js"
+	"modules/featurehits/featurehits.js",
+	
+	"modules/legend/legend.js",
+	
+	"modules/bookmarks/lib/AddIns/Bookmark.js",
+        "modules/bookmarks/bookmarks.js",
+	
+	"modules/swipe/swipe/lib/Swipe.js",
+	"modules/swipe/swipe.js",
+	
+	"modules/intropopup/intropopup.js"
 ];
 
 /***(var) loader_css_files: stores all the internal css (styles) urls to be included*****/
@@ -234,6 +250,8 @@ var loader_css_files=[
 	"tools/extjs/resources/css/ext-all.css",
 	"tools/extjs/resources/ext-theme-gray/ext-theme-gray-all.css",
 	"tools/extjs/plugins/boxselect/BoxSelect.css",
+	"modules/bookmarks/lib/AddIns/bookmark.css",
+	"modules/swipe/swipe/css/swipe.css",
 	"css/style.css"
 ];
 

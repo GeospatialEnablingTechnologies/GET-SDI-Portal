@@ -150,7 +150,8 @@ $_config_init_map = "function _config_init_map()
 			[\"UTF 8\",\"UTF-8\"]
 		],
 		_defaultProjection:\"EPSG:900913\",
-		_setCoordinatesZoomLevel:20,
+		_setCoordinatesZoomLevel:20,		
+		_setMousemoveInfo:false,
 		_setCoordinatesDefaultProjections:[\"GGRS 87 (EPSG:2100)\",\"Google Mercator (EPSG:900913)\",\"WGS 84 (EPSG:4326)\"],
 		_getCoordinatesDefaultProjections:[\"GGRS 87 (EPSG:2100)\",\"Google Mercator (EPSG:900913)\",\"WGS 84 (EPSG:4326)\"],
 		_mapUnits:[],
@@ -248,8 +249,14 @@ echo $_config_init_map;
 
 echo "\r\n\r\n";
 
+function replace_unicode_escape_sequence($match) {
+    return mb_convert_encoding(pack('H*', $match[1]), 'UTF-8', 'UCS-2BE');
+}
+
 function jsonRemoveUnicodeSequences($struct) {
-   return preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))", json_encode($struct));
+    return preg_replace_callback("/\\\\u([a-f0-9]{4})/i", 'replace_unicode_escape_sequence', json_encode($struct));
+  // return json_encode($struct);
+
 }
 
 
