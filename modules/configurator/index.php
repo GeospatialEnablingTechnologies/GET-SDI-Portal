@@ -151,11 +151,12 @@ $_config_init_map = "function _config_init_map()
 		],
 		_defaultProjection:\"EPSG:900913\",
 		_setCoordinatesZoomLevel:20,
+		_setMousemoveInfo:false,
 		_setCoordinatesDefaultProjections:[\"GGRS 87 (EPSG:2100)\",\"Google Mercator (EPSG:900913)\",\"WGS 84 (EPSG:4326)\"],
 		_getCoordinatesDefaultProjections:[\"GGRS 87 (EPSG:2100)\",\"Google Mercator (EPSG:900913)\",\"WGS 84 (EPSG:4326)\"],
 		_mapUnits:[],
 		_mapOptions:{
-			units: \"km\", 
+			units: \"km\",
 			zoomMethod:null,
 			transitionEffect:null,
 			projection:new OpenLayers.Projection(\"EPSG:900913\"),
@@ -176,7 +177,7 @@ $_config_init_map = "function _config_init_map()
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString(\"-20037508.34,-20037508.34,20037508.34,20037508.34\")
-						
+
 					})
 			},
 			{
@@ -192,7 +193,7 @@ $_config_init_map = "function _config_init_map()
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString(\"-20037508.34,-20037508.34,20037508.34,20037508.34\")
-						
+
 					})
 			},
 			{
@@ -206,7 +207,7 @@ $_config_init_map = "function _config_init_map()
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString(\"-20037508.34,-20037508.34,20037508.34,20037508.34\")
-						
+
 					})
 			},
 			{
@@ -222,7 +223,7 @@ $_config_init_map = "function _config_init_map()
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString(\"-20037508.34,-20037508.34,20037508.34,20037508.34\")
-						
+
 					})
 			},
 			{
@@ -234,12 +235,12 @@ $_config_init_map = "function _config_init_map()
 						fractionalZoom:false,
 						isBaseLayer:true,
 						maxExtent:new OpenLayers.Bounds.fromString(\"-20037508.34,-20037508.34,20037508.34,20037508.34\")
-						
+
 					})
 			}
 		]
 	}
-	
+
 	return _config;
 
 }";
@@ -248,8 +249,14 @@ echo $_config_init_map;
 
 echo "\r\n\r\n";
 
+function replace_unicode_escape_sequence($match) {
+    return mb_convert_encoding(pack('H*', $match[1]), 'UTF-8', 'UCS-2BE');
+}
+
 function jsonRemoveUnicodeSequences($struct) {
-   return preg_replace("/\\\\u([a-f0-9]{4})/e", "iconv('UCS-4LE','UTF-8',pack('V', hexdec('U$1')))", json_encode($struct));
+    return preg_replace_callback("/\\\\u([a-f0-9]{4})/i", 'replace_unicode_escape_sequence', json_encode($struct));
+  // return json_encode($struct);
+
 }
 
 
@@ -288,7 +295,7 @@ $_config_print_layouts="var _config_print_layouts=[{
 		_print_logo:\"\",
 		_print_title:\"\",
 		_print_abstract:\"Abstract\"
-	
+
 }];";
 
 echo "\r\n\r\n";
