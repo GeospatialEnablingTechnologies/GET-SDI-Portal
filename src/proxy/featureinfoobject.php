@@ -211,7 +211,7 @@ class FEATUREINFOOBJECT
 			case "WFS":
 				$_query["REQUEST"]="GETFEATURE";
 				$_query["SERVICE"]="WFS";
-				$_query["VERSION"]="1.1.0";
+				$_query["VERSION"]="2.0.0";
 				$_query["FEATUREID"]=$objArr->_featureId;
 				$_query["OUTPUTFORMAT"]=$objArr->_featureInfoFormat;
 				$_query["TYPENAME"]=$objArr->_layerName;
@@ -227,7 +227,7 @@ class FEATUREINFOOBJECT
 		
         $_query["REQUEST"]="GETFEATURE";
         $_query["SERVICE"]="WFS";
-		$_query["VERSION"]="1.1.0";
+		$_query["VERSION"]="2.0.0";
         $_query["OUTPUTFORMAT"]="GML2";
         $_query["TYPENAME"]=$objArr->_layerName;
         $_query["CQL_FILTER"]=str_replace("%","%25",$objArr->_cqlFilter);
@@ -242,7 +242,7 @@ class FEATUREINFOOBJECT
 		
 		$_query["REQUEST"]="GETFEATURE";
 		$_query["SERVICE"]="WFS";
-		$_query["VERSION"]="1.1.0";
+		$_query["VERSION"]="2.0.0";
 		$_query["OUTPUTFORMAT"]="GML2";
 		$_query["TYPENAME"]=$objArr->_layerName;
 		$_query["FEATUREID"]=$featureId;
@@ -273,7 +273,7 @@ class FEATUREINFOOBJECT
 			case "WFS":
 				$_query["REQUEST"]="GETFEATURE";
 				$_query["SERVICE"]="WFS";
-				$_query["VERSION"]="1.1.0";
+				$_query["VERSION"]="2.0.0";
 				$_query["FEATUREID"]=$featureId;
 				$_query["OUTPUTFORMAT"]=$objArr->_featureInfoFormat;
 				$_query["TYPENAME"]=$objArr->_layerName;
