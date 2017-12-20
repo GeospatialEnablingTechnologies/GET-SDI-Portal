@@ -1,4 +1,4 @@
-GET SDI Portal v4.0
+GET SDI Portal v4.5
 ===================
 **GET SDI Portal**, is a web mapping application providing a comprehensive platform for viewing, downloading, analyzing, querying, editing and styling data originating from multiple geospatial sources. It constitutes a simple and ready to deploy solution for any organization who wants to setup a Geoportal based on **ISO/OGC** Standards.
 
