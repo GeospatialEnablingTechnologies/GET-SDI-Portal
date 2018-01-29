@@ -106,7 +106,7 @@ function fn_getLanguageFile()
 				iconCls:"en_us",
 				handler:function()
 				{
-					window.location=host+"?lang=EN";
+					window.location=host;
 				}
 			};
 			
@@ -129,7 +129,7 @@ function fn_getLanguageFile()
 				iconCls:"el_gr",
 				handler:function()
 				{
-					window.location=host;
+					window.location=host+"?lang=GR";
 				}
 			};
 		
